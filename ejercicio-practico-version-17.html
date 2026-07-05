@@ -1,0 +1,2543 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ales-python-flask-sept-2020/ejercicio-practico-version-17.html">
+      
+      
+        <link rel="prev" href="ejercicio-practico-version-16.html">
+      
+      
+        <link rel="next" href="ejercicio-practico-version-18-.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>37. Ejercicio práctico: versión 17 - Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#37-ejercicio-practico-version-17" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" class="md-header__button md-logo" aria-label="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              37. Ejercicio práctico: versión 17
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar al modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar al modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar al modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar al modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ales-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" class="md-nav__button md-logo" aria-label="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ales-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prologo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Prólogo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="instalacion-de-un-entorno-de-trabajo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación de un entorno de trabajo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conceptos-basicos-de-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Conceptos básicos de Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-cadenas-de-caracteres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Las cadenas de caracteres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-excepciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Las excepciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-funciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Las funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="los-archivos-de-texto.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Los archivos de texto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-de-aplicacion---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Ejercicio de aplicación – versión 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-importaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Las importaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Ejercicio práctico: versión 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Ejercicio práctico: versión 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-clases-y-los-objetos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Las clases y los objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-clases-genericas-baseentity-y-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Las clases genéricas [BaseEntity] y [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arquitectura-en-capas-y-programacion-por-interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Arquitectura en capas y programación por interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-de-aplicacion---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Ejercicio de aplicación - versión 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Uso de SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-sgbd-y-postgresql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Uso de SGBD y PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="escribir-codigo-independiente-de-sgbd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Escribir código independiente de SGBD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-orm-sqlalchemy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Uso de ORM SQLALCHEMY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Ejercicio práctico: versión 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="funciones-de-internet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Funciones de Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="servicios-web-con-el-marco-flask.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Servicios web con el marco Flask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Ejercicio práctico: versión 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Ejercicio práctico: versión 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-ejercicio-practico-version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Ejercicio práctico: versión 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="del-diccionario-a-xml-y-viceversa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Del diccionario a XML y viceversa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Ejercicio práctico: versión 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Ejercicio práctico: versión 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Ejercicio práctico: versión 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Ejercicio práctico: versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clientes-web-para-los-servicios-json-y-xml-de-la-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Clientes web para los servicios jSON y XML de la versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="el-modo-html-de-la-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. El modo HTML de la versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Ejercicio práctico: versión 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Ejercicio práctico: versión 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Ejercicio práctico: versión 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Ejercicio práctico: versión 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Ejercicio práctico: versión 17
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ejercicio-practico-version-17.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Ejercicio práctico: versión 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#371-reubicacion-de-las-dependencias-de-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37.1. Reubicación de las dependencias de la aplicación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#372-pruebas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37.2. Pruebas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#373-portacion-de-una-aplicacion-pythonflask-a-un-servidor-apachewindows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37.3. Portación de una aplicación Python/Flask a un servidor Apache/Windows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="37.3. Portación de una aplicación Python/Flask a un servidor Apache/Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3731-fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37.3.1. Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3732-instalacion-del-modulo-de-python-mod_wsgi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37.3.2. Instalación del módulo de Python mod_wsgi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3733-configuracion-del-servidor-apache-de-laragon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37.3.3. Configuración del servidor Apache de Laragon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#374-creacion-de-un-primer-servidor-virtual-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37.4. Creación de un primer servidor virtual de Apache
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#375-portacion-de-la-aplicacion-de-calculo-de-impuestos-a-apache-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37.5. Portación de la aplicación de cálculo de impuestos a Apache / Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-18-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Ejercicio práctico: versión 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="exercicedapplication13" name="exercicedapplication13" class="odt-bookmark-anchor"></span>
+<span id="toc48549342" name="toc48549342" class="odt-bookmark-anchor"></span></p>
+<h1 id="37-ejercicio-practico-version-17">37. <span style="color: #365f91">Ejercicio práctico: versión 17</span></h1>
+<p><img src="images/1000000000000114000001AD0792667B.png" width="121" height="188" style="width:3.193cm;height:4.962cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000114000001AD0792667B.png" /></p>
+<p>Esta nueva versión trae las siguientes novedades:</p>
+<ul>
+  <li>se va a portar a un servidor Apache / Windows;
+  </li>
+  <li>para llevar a cabo esta migración, la versión 17 contiene todas las dependencias que necesita en su carpeta <b>[impots / http-servers/ 12]</b>. Cabe recordar que las versiones anteriores obtenían sus dependencias de diferentes carpetas de todo el proyecto <b>[python-flask-2020]</b>;
+  </li>
+</ul>
+
+<p><span id="toc48549343" name="toc48549343" class="odt-bookmark-anchor"></span></p>
+<h2 id="371-reubicacion-de-las-dependencias-de-la-aplicacion">37.1. <span style="color: #4f81bd">Reubicación de las dependencias de la aplicación</span></h2>
+<p><img src="images/1000000000000109000000D06F1F6856.png" width="116" height="91" style="width:3.069cm;height:2.409cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000109000000D06F1F6856.png" /></p>
+<p>Cabe recordar que la gestión de las dependencias de la aplicación se realiza en el script <strong>[syspath]</strong>. En la versión anterior, este script era el siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span> configure(config: dict) -&gt; dict:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">import</span> os</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># carpeta de este archivo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    script_dir = os.path.dirname(os.path.abspath(__file__))</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># ruta raíz</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    root_dir = <span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># dependencias</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    absolute_dependencies = <span style="font-weight:bold">[</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># carpetas del proyecto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># BaseEntity, MyException</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/classes/02/entities&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># InterfaceImpôtsDao, InterfaceImpôtsMétier, InterfaceImpôtsUi</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/v04/interfaces&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># AbstractImpôtsdao, ImpôtsConsole, ImpôtsMétier</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/v04/services&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># ImpotsDaoWithAdminDataInDatabase</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/v05/services&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># AdminData, ImpôtsError, TaxPayer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/v04/entities&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># Constantes, tramos</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/v05/entities&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># Registrador, SendAdminMail</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/http-servers/02/utilities&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># carpeta del script principal</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        script_dir,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># configuraciones [database, layers, parameters, controllers, views]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../configs&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># controladores</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../controllers&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># respuestas HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../responses&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># plantillas de vistas</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../models_for_views&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># se establece el syspath</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">from</span> myutils <span style="color:#0000ff">import</span> set_syspath</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    set_syspath(absolute_dependencies)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># se aplica la configuración</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;root_dir&quot;</span>: root_dir,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;script_dir&quot;</span>: script_dir</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+</code></pre></div>
+
+<p>Es necesario reubicar todas las dependencias cuyo nombre absoluto dependa de la variable <strong>[root_dir]</strong> de la línea 8, es decir, las líneas 13 a 26.</p>
+<p>El script <strong>[syspath]</strong> de la nueva versión será el siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span> configure(config: dict) -&gt; dict:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">import</span> os</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># carpeta de este archivo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    script_dir = os.path.dirname(os.path.abspath(__file__))</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># dependencias</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    absolute_dependencies = <span style="font-weight:bold">[</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># entidades de la aplicación</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../entities&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># capa [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../layers/dao&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># capa [métier]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../layers/métier&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># utilidades</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../utilities&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># carpeta del script principal</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        script_dir,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># configuraciones [database, layers, parameters, controllers, views]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../configs&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># controladores</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../controllers&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># respuestas HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../responses&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># plantillas de vistas</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../models_for_views&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># se establece el syspath</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">import</span> sys</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># se le agregan las dependencias absolutas del proyecto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">for</span> directory <span style="color:#0000ff">in</span> absolute_dependencies:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># se verifica la existencia de la carpeta</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        existe = os.path.exists(directory) <span style="color:#0000ff">and</span> os.path.isdir(directory)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> <span style="color:#0000ff">not</span> existe:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000"># se avisa al desarrollador</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">raise</span> BaseException(<span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[set_syspath]</span><span style="color:#a31515"> le dossier du Python Path </span><span style="font-weight:bold;color:#a31515">[</span><span style="font-weight:bold">{directory}</span><span style="font-weight:bold;color:#a31515">]</span><span style="color:#a31515"> n&#x27;existe pas&quot;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">else</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000"># se inserta la carpeta al inicio de la ruta del sistema</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            sys.path.insert(<span style="color:#098658">0</span>, directory)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># se aplica la configuración</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;script_dir&quot;</span>: script_dir,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+</code></pre></div>
+
+<ul>
+  <li>líneas 8 a 27: todas las dependencias ahora son relativas a la variable <b>[script_dir] </b>de la línea 5;
+  </li>
+  <li>líneas 42-45: la variable <b>[root_dir] </b>ha desaparecido de la configuración de syspath;
+  </li>
+  <li>línea 10: las entidades de la aplicación se encuentran en la carpeta <b>[entities] [1]</b>;
+  </li>
+  <li>línea 12: la capa <b>[dao] </b>se encuentra en la carpeta <b>[layers/dao] [2]</b>;
+  </li>
+  <li>línea 14: la capa <b>[métier] </b>se encuentra en la carpeta <b>[layers/métier] [2]</b>;
+  </li>
+  <li>línea 16: las utilidades <b>[Logger, SendMail] </b>se encuentran en la carpeta <b>[utilities] [3]</b>;
+  </li>
+  <li>líneas 29-40: se calcula la ruta de Python de la aplicación sin importar el módulo <b>[myutils]</b>;
+  </li>
+</ul>
+
+<p><img src="images/100000000000061A000001BCF1041F6F.png" width="680" height="193" style="width:18cm;height:5.117cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000061A000001BCF1041F6F.png" /></p>
+<p><span id="toc48549344" name="toc48549344" class="odt-bookmark-anchor"></span></p>
+<h2 id="372-pruebas">37.2. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">Pruebas</span></strong></span></h2>
+<p>En este punto, la versión 17 debería funcionar. Verifícalo.</p>
+<p><span id="toc48549345" name="toc48549345" class="odt-bookmark-anchor"></span></p>
+<h2 id="373-portacion-de-una-aplicacion-pythonflask-a-un-servidor-apachewindows">37.3. <span style="color: #4f81bd">Portación de una aplicación Python/Flask a un servidor Apache/Windows</span></h2>
+<p><span id="sources" name="sources" class="odt-bookmark-anchor"></span>
+<span id="toc48549346" name="toc48549346" class="odt-bookmark-anchor"></span></p>
+<h3 id="3731-fuentes">37.3.1. <span style="color: #4f81bd">Fuentes</span></h3>
+<p>Para portar una aplicación Flask a Apache / Windows, tuve que buscar información en Internet. Este es el enlace que me ayudó a empezar: [https://medium.com/@madumalt/flask-app-deployment-in-windows-apache-server-mod-wsgi-82e1cfeeb2ed];</p>
+<p>Utilicé la información de este enlace, excepto para la configuración del servidor Apache. Para ello, utilicé un ejemplo de configuración del servidor Apache de Laragon.</p>
+<p><span id="toc48549347" name="toc48549347" class="odt-bookmark-anchor"></span></p>
+<h3 id="3732-instalacion-del-modulo-de-python-mod_wsgi">37.3.2. <span style="color: #4f81bd">Instalación del módulo de Python mod_wsgi</span></h3>
+<p>La aplicación de Python/Flask que desarrollamos utilizaba el servidor WSGI (Web Server Gateway Interface) <strong>[werkzeug]</strong> que viene incluido con Flask. Este servidor se describe |aquí|. El enlace [https://www.fullstackpython.com/wsgi-servers.html] describe el funcionamiento de los servidores WSGI. Existen diferentes <a href="https://wsgi.readthedocs.io/en/latest/servers.html"><u><span style="color: #0563c1">|servidores</span></u></a> WSGI|. Uno de ellos es el servidor Apache que opera en modo WSGI. Esta es la solución que adoptamos aquí porque Laragon, que hemos instalado, viene con un servidor Apache.</p>
+<p>Para que el servidor Apache pueda alojar una aplicación en Python, debemos instalar el módulo de Python <strong>[mod_wsgi]</strong>. La instalación de este módulo es complicada porque durante el proceso se lleva a cabo una compilación en C++. Para que la instalación sea exitosa, se necesita un compilador de Microsoft C++. Una solución sencilla es instalar la versión actual de Visual Studio Community [https://visualstudio.microsoft.com/fr/vs/community/].</p>
+<p>Si no se necesita Visual Studio para nada más que para <strong>[mod_wsgi]</strong>, se puede limitar la instalación al entorno de C++:</p>
+<p><img src="images/100000000000053100000327B3B2CAA6.png" width="579" height="352" style="width:15.332cm;height:9.31cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000053100000327B3B2CAA6.png" /></p>
+<p>Una vez instalado el compilador de C++, la instalación del módulo <strong>[mod_wsgi]</strong> se realiza en un terminal PyCharm:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content">(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\http-servers\11&gt;<span style="background-color:#fff2cc">SET MOD_WSGI_APACHE_ROOTDIR=C:\MyPrograms\laragon\bin\apache\httpd-2.4.35-win64-VC15</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\http-servers\11&gt;<span style="background-color:#fff2cc">pip install mod_wsgi</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Collecting mod_wsgi</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  Using cached mod_wsgi-4.7.1.tar.gz (498 kB)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Using legacy setup.py install for mod-wsgi, since package &#x27;wheel&#x27; is not installed.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Installing collected packages: mod-wsgi</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Running setup.py install for mod-wsgi ... done</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Successfully installed mod-wsgi-4.7.1</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 1: se establece el valor de la variable de entorno <b>[MOD_WSGI_APACHE_ROOTDIR]</b>. Este valor es la ubicación del servidor Apache en el sistema de archivos. En este caso, dicha ubicación es <b>[&lt;laragon&gt;\bin\apache\httpd-2.4.35-win64-VC15], </b>donde &lt;laragon&gt; es la carpeta de instalación de Laragon. Puedes obtener esta ubicación de varias maneras. Aquí te mostramos una obtenida a partir de una de las opciones de Laragon:
+  </li>
+</ul>
+
+<p><img src="images/100000000000031D000001D48D3C5E42.png" width="348" height="204" style="width:9.209cm;height:5.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000031D000001D48D3C5E42.png" /></p>
+<p>En <strong>[1-3]</strong>, el archivo <strong>[httpd.conf]</strong> es el archivo de configuración principal del servidor Apache. A continuación, se abre dicho archivo en un editor de texto (Notepad++, como se muestra a continuación):</p>
+<p><img src="images/1000000000000472000001006BDF5600.png" width="496" height="112" style="width:13.13cm;height:2.955cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000472000001006BDF5600.png" /></p>
+<p>En <strong>[2]</strong>, la carpeta de instalación de Apache es la que precede a la cadena <strong>[conf\httpd.conf]</strong>.</p>
+<p>Volvamos a la instalación del módulo <strong>[mod_wsgi]</strong>:</p>
+<ul>
+  <li>líneas 3-9: instalación del módulo <b>[mod_wsgi]</b>;
+  </li>
+</ul>
+
+<p><span id="toc48549348" name="toc48549348" class="odt-bookmark-anchor"></span></p>
+<h3 id="3733-configuracion-del-servidor-apache-de-laragon">37.3.3. <span style="color: #4f81bd">Configuración del servidor Apache de Laragon</span></h3>
+<p>Vamos a configurar el servidor Apache de Laragon. Comenzamos con su archivo de configuración principal <strong>[httpd.conf]</strong>:</p>
+<p><img src="images/100000000000031D000001D48D3C5E42.png" width="348" height="204" style="width:9.209cm;height:5.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000031D000001D48D3C5E42.png" /></p>
+<p>Nos colocamos al final del archivo <strong>[httpd.conf]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">IncludeOptional &quot;C:/MyPrograms/laragon/etc/apache2/alias/*.conf&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">IncludeOptional &quot;C:/MyPrograms/laragon/etc/apache2/sites-enabled/*.conf&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Include &quot;C:/MyPrograms/laragon/etc/apache2/httpd-ssl.conf&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Include &quot;C:/MyPrograms/laragon/etc/apache2/mod_php.conf&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># Python mod_wsgi</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">LoadModule wsgi_module</span> &quot;c:/data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages/mod_wsgi/server/mod_wsgi.cp38-win_amd64.pyd&quot;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>La línea 8 se ha agregado al final del archivo <b>[httpd.conf]</b>. Le indica al servidor Apache dónde se encuentra un elemento del módulo <b>[mod_wsgi] </b>que acabamos de instalar;
+  </li>
+</ul>
+
+<p>Una forma sencilla de obtener la ruta de la línea 8 es ejecutar el siguiente comando en un terminal PyCharm:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content">(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\http-servers\11&gt;<span style="background-color:#fff2cc">mod_wsgi-express module-config</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">LoadModule wsgi_module</span> &quot;c:/data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages/mod_wsgi/server/mod_wsgi.cp38-win_amd64.pyd&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">WSGIPythonHome</span> &quot;c:/data/st-2020/dev/python/cours-2020/python3-flask-2020/venv&quot;</span></span>
+</code></pre></div>
+
+<p>Algunas documentaciones indican que hay que agregar las líneas 2 y 3 al final del archivo <strong>[httpd.conf]</strong>. En mi caso, la línea 3 anterior provocaba un error (falta el módulo <strong>[encodings]</strong>). Por lo tanto, no se incluyó en el archivo <strong>[httpd.conf]</strong>. Solo se incluyó la línea 2. El significado de los diferentes parámetros del módulo <strong>[mod_wsgi]</strong> que se pueden utilizar en los archivos de configuración de Apache se describe |aquí|.</p>
+<p>A continuación, activaremos el protocolo HTTPS del servidor Apache:</p>
+<p><img src="images/100000000000055600000275CC678078.png" width="596" height="274" style="width:15.769cm;height:7.262cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000055600000275CC678078.png" /></p>
+<ul>
+  <li>en <b>[1-4]</b>, se activa el protocolo HTTPS del servidor Apache;
+  </li>
+</ul>
+
+<p>A partir de ahora, podremos utilizar URL y <strong>[https://serveur/chemin]</strong>;</p>
+<p>Para configurar Apache para que aloje una aplicación Flask, el enlace mencionado <a href="#sources"><u><span style="color: #0563c1">|más arriba|</span></u></a> utiliza servidores virtuales. Laragon también ofrece la posibilidad de administrar servidores virtuales:</p>
+<p><img src="images/1000000000000619000002D28424DFC7.png" width="680" height="315" style="width:18cm;height:8.326cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000619000002D28424DFC7.png" /></p>
+<ul>
+  <li>en <b>[1-3]</b>, le pedimos a Laragon que cree automáticamente hosts virtuales;
+  </li>
+</ul>
+
+<p>El siguiente paso es crear un proyecto web con Laragon:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000615000001BB97C79F61.png" width="680" height="194" style="display:inline-block; margin:4px;width:18cm;height:5.121cm;" class="odt-zoomable" data-zoom-src="images/1000000000000615000001BB97C79F61.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000396000001B233858FE2.png" width="401" height="189" style="display:inline-block; margin:4px;width:10.599cm;height:5.011cm;" class="odt-zoomable" data-zoom-src="images/1000000000000396000001B233858FE2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000017B000000EF66868113.png" width="166" height="104" style="display:inline-block; margin:4px;width:4.382cm;height:2.762cm;" class="odt-zoomable" data-zoom-src="images/100000000000017B000000EF66868113.png" /></td></tr></table>
+
+<ul>
+  <li>En <b>[1-3]</b>, se crea un proyecto PHP vacío;
+  </li>
+  <li>en <b>[4-8]</b>, Laragon ha creado un sitio virtual llamado <b>[auto.projet-test.test], </b>configurado por el archivo <b>[auto.projet-test.test.conf] [8] </b>de la carpeta <b>[sites-enabled] [7]</b>. Esta carpeta se encuentra en la dirección <b>[&lt;laragon&gt;\etc\apache2\sites-enabled], </b>donde <b>[laragon] </b>es la carpeta de instalación de Laragon;
+  </li>
+</ul>
+
+<p>Aunque no forma parte de lo que estamos haciendo en este momento, tal vez te dé curiosidad echar un vistazo a este sitio web <strong>[projet-test]</strong> que acabamos de crear:</p>
+<p><img src="images/100000000000061700000298A930E748.png" width="680" height="290" style="width:18cm;height:7.666cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000061700000298A930E748.png" /></p>
+<ul>
+  <li>En <b>[1-5] </b>se ha creado un proyecto vacío. Se trata de un proyecto PHP ubicado en la carpeta <b>[&lt;laragon&gt;/www], </b>donde <b>[laragon] </b>es la carpeta de instalación de Laragon;
+  </li>
+</ul>
+
+<p>Ahora revisemos el archivo <strong>[auto.projet-test.test.conf]</strong> generado por Laragon en la carpeta <strong>[&lt;laragon&gt;\etc\apache2\sites-enabled]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define ROOT </span>&quot;C:/MyPrograms/laragon/www/projet-test/&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define SITE </span>&quot;projet-test.test&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:80&gt; </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    DocumentRoot </span>&quot;${ROOT}&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerName ${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;Directory </span>&quot;${ROOT}&quot;<span style="color:#000000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        AllowOverride All</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Require all granted</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    DocumentRoot </span>&quot;${ROOT}&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerName ${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;Directory </span>&quot;${ROOT}&quot;<span style="color:#000000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        AllowOverride All</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Require all granted</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLEngine on</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLCertificateKeyFile   C:/MyPrograms/laragon/etc/ssl/laragon.key</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 1: la raíz, en el sistema de archivos, del proyecto creado;
+  </li>
+  <li>línea 2: el nombre del servidor virtual. Los archivos URL para este servidor tendrán el formato <b>[http(s)://projet-test.test/chemin]</b>;
+  </li>
+  <li>líneas 4-12: configuración del sitio virtual para el puerto 80 (línea 4) y el protocolo HTTP;
+  </li>
+  <li>líneas 14-27: configuración del sitio virtual para el puerto 443 (línea 14) y el protocolo HTTPS;
+  </li>
+</ul>
+
+<p>Veamos cómo funciona un servidor virtual. Primero, iniciemos el servidor Apache y PHP:</p>
+<p>Luego, con un navegador, solicitamos el URL [http://projet-test.test/]:</p>
+<p><img src="images/100000000000026C000000D3F181C390.png" width="271" height="92" style="width:7.17cm;height:2.439cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026C000000D3F181C390.png" /></p>
+<ul>
+  <li>en <b>[1]</b>, la página URL solicitada;
+  </li>
+  <li>En <b>[2]</b>, se utilizó el protocolo HTTP;
+  </li>
+  <li>en <b>[3]</b>, dado que el proyecto <b>[projet-test] </b>está vacío, se obtiene el índice de su carpeta (lista de su contenido), índice vacío;
+  </li>
+</ul>
+
+<p>Ahora solicitemos el URL protegido por [https://projet-test.test/]:</p>
+<p><img src="images/10000000000002980000010E1AEDFA71.png" width="290" height="118" style="width:7.661cm;height:3.115cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002980000010E1AEDFA71.png" /></p>
+<ul>
+  <li>En <b>[1-2]</b>, se obtiene la misma respuesta que antes, pero con el protocolo HTTPS <b>[1]</b>;
+  </li>
+</ul>
+
+<p>La creación del servidor virtual <strong>[projet-test.test]</strong> generó una nueva entrada en el archivo <strong>[&lt;windows&gt;/system32/drivers/etc/hosts]</strong>:</p>
+<p><img src="images/100000000000035500000233AB323C45.png" width="372" height="246" style="width:9.85cm;height:6.502cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000035500000233AB323C45.png" /></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="gh"># Copyright (c) 1993-2009 Microsoft Corp.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="gh">#</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="gh"># Este es un archivo de ejemplo HOSTS utilizado por Microsoft TCP/IP para Windows.</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="gh">#</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="gh"># Este archivo contiene las asignaciones de direcciones de IP a nombres de host. Cada</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="gh"># entrada debe aparecer en una línea separada. La dirección IP debe</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="gh"># colocarse en la primera columna, seguida del nombre de host correspondiente.</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="gh"># La dirección IP y el nombre de host deben estar separados por al menos un</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="gh"># espacio.</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="gh">#</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="gh"># Además, se pueden insertar comentarios (como estos) en líneas individuales</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="gh"># líneas individuales o después del nombre de la máquina, indicados con el símbolo «#».</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="gh">#</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="gh"># Por ejemplo:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="gh">#</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="gh">#       102.54.9    4.97 rhino.         acme.com # servidor de origen</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="gh">#        38.25.    63.10 x             .acme.com # host del cliente x</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="gh"># La resolución de nombres de localhost se gestiona dentro del propio DNS.</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="gh">#     127.0.0.1       localhost</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="gh">#     ::1             localhost</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>127.0.0.1      projet-test.test     #¡La magia de Laragon!   
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>línea 23: la dirección IP del nombre <b>[projet-test.test] </b>es 127.0.0.1, es decir, la dirección de <b>[localhost] </b>(línea 20), la máquina local. Por lo tanto, cuando en un navegador se escribe URL <b>[http://projet-test.test/chemin]</b>, la solicitud se envía a la dirección 127.0.0.1 en el puerto 80. Es entonces el servidor Apache de la máquina local (localhost) el que responde.
+  </li>
+</ul>
+
+<p>Cabe preguntarse por qué, al escribir la solicitud [http://projet-test.test/], el servidor Apache utiliza la configuración del archivo <strong>[&lt;laragon&gt;\etc\apache2\sites-enabled\auto.projet-test.test.conf]</strong>:</p>
+<p><img src="images/10000000000002D500000132A4D6508A.png" width="316" height="133" style="width:8.363cm;height:3.53cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D500000132A4D6508A.png" /></p>
+<p>Para entenderlo, hay que ver qué envía el navegador al servidor Apache al realizar esta solicitud. Hagámosla con Postman:</p>
+<p><img src="images/1000000000000472000003064AF73E99.png" width="497" height="338" style="width:13.139cm;height:8.938cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000472000003064AF73E99.png" /></p>
+<ul>
+  <li>en <b>[1-3]</b>, se envía una solicitud HTTPS <b>[1]</b>;
+  </li>
+  <li>al enviar <b>[4]</b>, Postman indica que no ha reconocido el certificado de seguridad. El protocolo HTTPS establece una conexión cifrada entre el cliente web (en este caso, Postman) y el servidor Apache. Esta conexión cifrada se realiza mediante certificados intercambiados entre el cliente y el servidor. Es el servidor el que inicia el diálogo para establecer la conexión cifrada enviando al cliente un certificado de seguridad. Para que el cliente acepte este certificado, debe estar firmado, es decir, adquirido a empresas autorizadas para emitir certificados de seguridad. Cuando activamos el protocolo HTTPS de Laragon, Laragon creó por sí mismo el certificado de seguridad. En este caso, se dice que el certificado es autofirmado. La mayoría de los clientes web emiten una advertencia cuando reciben un certificado autofirmado. Eso es lo que hace Postman en <b>[4]</b>. La mayoría de los clientes web ofrecen entonces la opción de desactivar la verificación del certificado de seguridad enviado por el servidor. Eso es lo que propone Postman en <b>[5]</b>;
+  </li>
+</ul>
+
+<p>Hacemos clic en el enlace <strong>[5]</strong> para desactivar la verificación SSL (Secure Sockets Layer). SSL / TSL (Transport Layer Security) es un protocolo de seguridad que crea un canal de comunicación seguro entre dos equipos en Internet. Es el protocolo que utiliza aquí Apache. La respuesta es la siguiente:</p>
+<p><img src="images/10000000000002D4000001E194E1D0AF.png" width="316" height="210" style="width:8.37cm;height:5.562cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D4000001E194E1D0AF.png" /></p>
+<p>Recibimos la misma página que con un navegador convencional. Ahora veamos el diálogo entre el cliente y el servidor en la consola de Postman (Ctrl-Alt-C):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.2</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="n">d153f711</span><span class="o">-</span><span class="n">ad99</span><span class="o">-</span><span class="mf">4e1</span><span class="n">d</span><span class="o">-</span><span class="mi">93</span><span class="n">c3</span><span class="o">-</span><span class="mi">61</span><span class="n">c25374d1be</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">projet</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">test</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="n">Date</span><span class="p">:</span> <span class="n">Fri</span><span class="p">,</span> <span class="mi">14</span> <span class="n">Aug</span> <span class="mi">2020</span> <span class="mi">09</span><span class="p">:</span><span class="mi">19</span><span class="p">:</span><span class="mi">24</span> <span class="n">GMT</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">Server</span><span class="p">:</span> <span class="n">Apache</span><span class="o">/</span><span class="mf">2.4.35</span> <span class="p">(</span><span class="n">Win64</span><span class="p">)</span> <span class="n">OpenSSL</span><span class="o">/</span><span class="mf">1.1.1</span><span class="n">b</span> <span class="n">PHP</span><span class="o">/</span><span class="mf">7.2.19</span> <span class="n">mod_wsgi</span><span class="o">/</span><span class="mf">4.7.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">3.8</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">161</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">Keep</span><span class="o">-</span><span class="n">Alive</span><span class="p">:</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">100</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">Keep</span><span class="o">-</span><span class="n">Alive</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span><span class="n">charset</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>línea 6: el encabezado HTTP <b>[Host] </b>especifica el nombre del servidor al que se dirige el cliente web. Este es el principio de los servidores virtuales. En una misma dirección IP (en este caso, 127.0.0.1), un servidor web puede alojar varios sitios web con nombres diferentes. El encabezado HTTP <b>[Host] </b>le permite al cliente indicar a qué servidor (en este caso, el de la dirección 127.0.0.1) se dirige;
+  </li>
+</ul>
+
+<p>¿Y ahora qué hace Apache?</p>
+<p>Al iniciarse, Apache lee todos los archivos de configuración que se encuentran en la carpeta <strong>[[&lt;laragon&gt;\etc\apache2\sites-enabled]</strong>:</p>
+<p><img src="images/10000000000002D500000132A4D6508A.png" width="316" height="133" style="width:8.363cm;height:3.53cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D500000132A4D6508A.png" /></p>
+<p>Cada archivo de configuración define un servidor virtual. Por ejemplo, en el archivo <strong>[auto.projet-test.test.conf]</strong>, encontramos la siguiente línea:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define ROOT </span>&quot;C:/MyPrograms/laragon/www/projet-test/&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#000000">define SITE </span><span style="background-color:#fff2cc">&quot;projet-test.test&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+</code></pre></div>
+
+<p>La línea 2 define el servidor virtual <strong>[projet-test.test]</strong>. El archivo <strong>[auto.projet-test.test.conf]</strong> contiene la configuración de este servidor virtual. Como lee al iniciarse todos los archivos de configuración de la carpeta <strong>[&lt;laragon&gt;\etc\apache2\sites-enabled]</strong>, el servidor Apache sabe que existe un servidor virtual llamado <strong>[projet-test.test]</strong>. Así, cuando recibe del cliente Postman la solicitud HTTPS:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.2</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="n">d153f711</span><span class="o">-</span><span class="n">ad99</span><span class="o">-</span><span class="mf">4e1</span><span class="n">d</span><span class="o">-</span><span class="mi">93</span><span class="n">c3</span><span class="o">-</span><span class="mi">61</span><span class="n">c25374d1be</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">projet</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">test</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+</code></pre></div></td></tr></table></div>
+<p>reconoce que la solicitud está dirigida al servidor virtual <strong>[projet-test.test]</strong> (línea 6) y que este existe. A continuación, utiliza la configuración del servidor virtual <strong>[projet-test.test]</strong> para responder al cliente Postman.</p>
+<p><span id="toc48549349" name="toc48549349" class="odt-bookmark-anchor"></span></p>
+<h2 id="374-creacion-de-un-primer-servidor-virtual-de-apache">37.4. <span style="color: #4f81bd">Creación de un primer servidor virtual de Apache</span></h2>
+<p>Ahora que sabemos para qué sirven los servidores virtuales y cómo configurarlos, vamos a crear uno. Servirá para ejecutar una aplicación Python Flask instalada en la carpeta <strong>[Apache]</strong> de la versión 17 que se está implementando en el servidor Apache:</p>
+<p><span id="hlk48316329" name="hlk48316329" class="odt-bookmark-anchor"></span>Hemos colocado en la carpeta <strong>[http-servers/12/apache/exemple]</strong> la aplicación desarrollada en el párrafo |enlace|, un servicio web de fecha y hora:</p>
+<p><img src="images/100000000000016D000001854BC86A09.png" width="159" height="170" style="width:4.219cm;height:4.496cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016D000001854BC86A09.png" /></p>
+<p>El servidor <strong>[date_time_server.py]</strong> es el siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># importaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> os</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> sys</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> time</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># tenemos que agregar la carpeta de los módulos a la ruta de Python</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># para la adaptación a Apache en Windows</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">sys.path.insert(</span><span style="color:#098658">0</span><span style="color:#000000">, </span>&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages&quot;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> flask <span style="color:#0000ff">import</span> Flask, make_response, render_template</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># aplicación Flask</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">script_dir = os.path.dirname(os.path.abspath(__file__))</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">application</span> = Flask(__name__, template_folder=<span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">&quot;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># Inicio URL</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">@application.route(<span style="color:#a31515">&#x27;/&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span> index():</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># envío de la hora al cliente</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># time.localtime: número de milisegundos desde el 01/01/1970</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># time.strftime permite dar formato a la hora y la fecha</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># formato de visualización de fecha y hora</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># d: día con 2 dígitos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># m: mes en dos dígitos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># y: año en dos dígitos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># H: hora 0,23</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># M: minutos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># S: segundos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># fecha/hora actual</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    time_of_day = time.strftime(<span style="color:#a31515">&#x27;%d/%m/%y %H:%M:%S&#x27;</span>, time.localtime())</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># se genera el documento para enviar al cliente</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    page = {<span style="color:#a31515">&quot;date_heure&quot;</span>: time_of_day}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    document = render_template(<span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">date_time_server.html</span><span style="color:#a31515">&quot;</span>, page=page)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    print(<span style="color:#a31515">&quot;document&quot;</span>, type(document), document)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># respuesta HTTP al cliente</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    response = make_response(document)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    print(<span style="color:#a31515">&quot;response&quot;</span>, type(response), response)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> response</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># solo mano</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">if</span> __name__ == <span style="color:#a31515">&#x27;__main__&#x27;</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="background-color:#fff2cc">application</span>.config.update(ENV=<span style="color:#a31515">&quot;development&quot;</span>, DEBUG=<span style="color:#0000ff">True</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="background-color:#fff2cc">application</span>.run()</span></span>
+</code></pre></div>
+
+<p>La aplicación Flask se identifica con el identificador <strong>[application]</strong> (líneas 14, 43, 44). Este nombre es <strong><mark style="background-color: #fff2cc">obligatorio</mark></strong>. Si se hace referencia a la aplicación Flask con otro identificador, la aplicación no funcionará y mostrará un mensaje de error indicando que no encuentra el URL solicitado. Este mensaje de error no da ninguna indicación sobre el origen del error. Por lo tanto, hay que estar atento a este punto.</p>
+<p>El archivo HTML al que se hace referencia en la línea 34 es el siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!DOCTYPE<span style="color:#000000"> </span><span style="color:#ff0000">html</span>&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;html<span style="color:#000000"> </span><span style="color:#ff0000">lang</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;fr&quot;</span>&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;head&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;meta<span style="color:#000000"> </span><span style="color:#ff0000">charset</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;UTF-8&quot;</span>&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;title&gt;<span style="color:#000000">Date et heure du moment</span>&lt;/title&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/head&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;body&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;b&gt;<span style="color:#000000">Date et heure du moment : {{page.date_heure}}</span>&lt;/b&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/body&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/html&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li><b>[date-time-server] </b>será el servidor virtual que alojará esta aplicación. Se configurará mediante el archivo <b>[&lt;laragon&gt;\etc\apache2\sites-enabled\date-time-server.conf] </b>(recordemos que este nombre es libre: Apache lee todos los archivos presentes en <b>[sites-enabled] </b>para identificar los sitios virtuales alojados);
+  </li>
+</ul>
+
+<p>Para obtener este archivo, primero copiamos el archivo <strong>[auto.projet-test.test.conf]</strong> y luego lo modificamos.</p>
+<p><img src="images/100000000000033C0000017DAC6AA1DA.png" width="361" height="166" style="width:9.55cm;height:4.394cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000033C0000017DAC6AA1DA.png" /></p>
+<p>El archivo <strong>[date-time-server.conf]</strong> quedará así:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># carpeta del script Python-Flask de la aplicación</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#000000">define ROOT </span><span style="background-color:#fff2cc;color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-servers/12/apache/exemple&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># nombre del sitio web configurado por este archivo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># aquí se llamará date-time-server</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># los URL serán del tipo http(s)://date-time-server/ruta</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#000000">define SITE </span><span style="background-color:#fff2cc;color:#a31515">&quot;date-time-server&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># agregue la dirección IP 127.0.0.1 para el sitio SITE en c:/windows/system32/drivers/etc/hosts</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL HTTP</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias / los URL tendrán el formato http(s)://servidor-de-fecha-y-hora/ruta/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="background-color:#fff2cc;color:#000000">WSGIScriptAlias / </span><span style="background-color:#fff2cc;color:#a31515">&quot;${ROOT}/date_time_server.py&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerName ${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        AllowOverride All</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Require all granted</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL protegidas con HTTPS</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias / los URL tendrán el formato http(s)://servidor-de-fecha-y-hora/ruta/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="background-color:#fff2cc;color:#000000">WSGIScriptAlias / </span><span style="background-color:#fff2cc;color:#a31515">&quot;${ROOT}/date_time_server.py&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerName ${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        AllowOverride All</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Require all granted</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLEngine on</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 7: se le asigna un nombre al servidor virtual configurado por el archivo;
+  </li>
+  <li>línea 2: se asigna el valor de la variable <b>[ROOT] </b>utilizada en las líneas 14 y 27;
+  </li>
+  <li>líneas 14 y 27: se indica la ruta del script de Python que debe ejecutarse cuando el servidor virtual recibe una solicitud. Aquí se indica que las solicitudes para el servidor <b>[date-time-server] </b>son procesadas por el script de Python <b>[date_time_server.py]</b>. Esta diferencia con el archivo <b>[auto.projet-test.test.conf] </b>se debe a que ese archivo configuraba un servidor PHP, mientras que el archivo <b>[date-time-server.conf] </b>configura un servidor Python;
+  </li>
+  <li>líneas 14 y 27: el atributo <b>[WSGIScriptAlias /] </b>indica aquí que la raíz del servidor <b>[date-time-server] </b>será <b>[/]</b>. De este modo, los URL de la aplicación tendrán la forma <b>[http(s)://date-time-server/chemin]</b>;
+  </li>
+  <li>en las líneas 14 y 27, se le puede asignar otra raíz a la aplicación, por ejemplo, <b>[WSGIScriptAlias /show]</b><mark style="background-color: #fff2cc">. </mark>Entonces, los URL de la aplicación tendrán la forma <b>[http(s)://show/date-time-server/chemin]</b>;
+  </li>
+</ul>
+
+<p>También debemos agregar una línea al archivo <strong>[&lt;windows&gt;/system32/drivers/etc/hosts]</strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="gh"># Copyright (c) 1993-2009 Microsoft Corp.</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="gh">#</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="gh"># Este es un archivo de ejemplo HOSTS utilizado por Microsoft TCP/IP para Windows.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="gh">#</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="gh"># Este archivo contiene las asignaciones de direcciones de IP a nombres de host. Cada</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="gh">#debe aparecer en una línea separada. La dirección IP debe</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="gh"># colocarse en la primera columna, seguida del nombre de host correspondiente.</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="gh"># La dirección IP y el nombre de host deben estar separados por al menos un</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="gh"># espacio.</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="gh">#</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="gh"># Además, se pueden insertar comentarios (como estos) en líneas individuales</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="gh"># líneas individuales o después del nombre de la máquina, indicados con el símbolo «#».</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="gh">#</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="gh"># Por ejemplo:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="gh">#</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="gh">#       102.54.9    4.97 rhino.         acme.com # servidor de origen</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="gh">#        38.25.    63.10 x             .acme.com # host del cliente x</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="gh"># La resolución de nombres de localhost se gestiona dentro del propio DNS.</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="gh">#     127.0.0.1       localhost</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="gh">#     ::1             localhost</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a>127.0.0.1    flask-impots-withmysql        # curso de Python: aplicación de impuestos con MySQL
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>127.0.0.1    flask-impots-withpgres        # curso de Python - aplicación de impuestos con PostgreSQL
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a>127.0.0.1    date-time-server            # curso de Python - hora y fecha actuales
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a>127.0.0.1           projet-test.test                #¡La magia de Laragon!
+</code></pre></div></td></tr></table></div>
+<p>Agregamos la línea 25 para asignar la dirección IP <strong>[127.0.0.1]</strong> al servidor virtual <strong>[date-time-server]</strong>.</p>
+<p>Verifiquemos todo esto. Iniciamos el servidor Apache:</p>
+<p><img src="images/1000000000000615000002C02F914C45.png" width="680" height="308" style="width:18cm;height:8.139cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000615000002C02F914C45.png" /></p>
+<p>Luego solicitamos URL <strong>[https://date-time-server]</strong> con un navegador:</p>
+<p><img src="images/1000000000000378000000FB0FCC6365.png" width="387" height="109" style="width:10.239cm;height:2.895cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000378000000FB0FCC6365.png" /></p>
+<ul>
+  <li>en <b>[1]</b>, la página solicitada URL;
+  </li>
+  <li>en <b>[3]</b>, la respuesta del servidor;
+  </li>
+  <li>en <b>[2]</b>, el navegador indica que la conexión HTTPS no es segura porque ha detectado que el certificado enviado por el servidor Apache era autofirmado;
+  </li>
+</ul>
+
+<p>Ahora, en el archivo <strong>[date-time-server.conf]</strong>, agreguemos un alias en las líneas 14 y 27:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    WSGIScriptAlias <span style="background-color:#fff2cc">/show-date-time</span> <span style="color:#a31515">&quot;${ROOT}/date_time_server.py&quot;</span></span></span>
+</code></pre></div>
+
+<p>El servidor Apache no toma en cuenta el cambio de inmediato. Es necesario recargarlo:</p>
+<p><img src="images/1000000000000476000000FF7F089CCB.png" width="498" height="111" style="width:13.169cm;height:2.94cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000476000000FF7F089CCB.png" /></p>
+<p>A continuación, solicitamos el URL <strong>[https://date-time-server/show-date-time]</strong>. La respuesta del servidor es entonces la siguiente:</p>
+<p><img src="images/10000000000003E3000000E4A993A263.png" width="434" height="100" style="width:11.492cm;height:2.633cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003E3000000E4A993A263.png" /></p>
+<p><span id="toc48549350" name="toc48549350" class="odt-bookmark-anchor"></span></p>
+<h2 id="375-portacion-de-la-aplicacion-de-calculo-de-impuestos-a-apache-windows">37.5. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">Portación de la aplicación de cálculo de impuestos a Apache / Windows</span></strong></span></h2>
+<p>El archivo <strong>[apache] [2]</strong> se obtiene inicialmente al copiar el archivo <strong>[main]</strong>. Es importante que estén en el mismo nivel para que las rutas del script <strong>[syspath.py],</strong> copiado de <strong>[1]</strong> a <strong>[2],</strong> sigan siendo válidas. Para no interferir con la aplicación <strong>[impots / http-servers/ 12]</strong> que está funcionando, colocamos en <strong>[apache]</strong> la configuración que ejecutará el servidor Apache;</p>
+<p><img src="images/100000000000015B0000027383EFF121.png" width="152" height="274" style="width:4.009cm;height:7.244cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015B0000027383EFF121.png" /></p>
+<ul>
+  <li>el archivo <b>[config] </b>de <b>[2] </b>es igual que <b>[config] </b>de <b>[1]</b>;
+  </li>
+  <li>el archivo <b>[syspath] </b>de <b>[2] </b>es el mismo que <b>[syspath] </b>de <b>[1]</b>;
+  </li>
+  <li>el archivo <b>[main_withmysql] </b>de <b>[2] </b>es el archivo <b>[main] </b>de <b>[1] </b>con las siguientes modificaciones:
+  </li>
+</ul>
+
+<p>El script principal <strong>[main]</strong> recibía un parámetro <strong>[mysql / pgres]</strong> que le indicaba qué SGBD debía utilizar. El script <strong>[main_withmysql]</strong> utiliza el SGBD MySQL:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># se espera un parámetro de MySQL o PostgreSQL</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> os</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> sys</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># se configura la aplicación con MySQL</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> config</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#000000">config = config.configure({</span><span style="background-color:#fff2cc;color:#a31515">&#x27;sgbd&#x27;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc;color:#a31515">&quot;mysql&quot;</span><span style="background-color:#fff2cc;color:#000000">})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># dependencias</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> SendAdminMail </span><span style="color:#0000ff">import</span><span style="color:#000000"> SendAdminMail</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> Logger </span><span style="color:#0000ff">import</span><span style="color:#000000"> Logger</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> ImpôtsError </span><span style="color:#0000ff">import</span><span style="color:#000000"> ImpôtsError</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+</code></pre></div>
+
+<p>En la línea 7, se establece el SGBD como MySQL.</p>
+<ul>
+  <li>El archivo <b>[main_withpgres] </b>de <b>[2] </b>es el archivo <b>[main] </b>de <b>[1] </b>con las siguientes modificaciones: utiliza el SGBD PostgreSQL:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># se espera un parámetro de MySQL o PostgreSQL</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> os</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> sys</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># se configura la aplicación con MySQL</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> config</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#000000">config = config.configure({</span><span style="background-color:#fff2cc;color:#a31515">&#x27;sgbd&#x27;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc;color:#a31515">&quot;pgres&quot;</span><span style="background-color:#fff2cc;color:#000000">})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># dependencias</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> SendAdminMail </span><span style="color:#0000ff">import</span><span style="color:#000000"> SendAdminMail</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> Logger </span><span style="color:#0000ff">import</span><span style="color:#000000"> Logger</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> ImpôtsError </span><span style="color:#0000ff">import</span><span style="color:#000000"> ImpôtsError</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+</code></pre></div>
+
+<p>En la línea 7, se cambia SGBD por PostgreSQL.</p>
+<p>Una vez hecho esto, se crea el script <strong>[main_withmysql.wsgi]</strong> (el sufijo utilizado no importa) de la siguiente manera:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># carpeta de este archivo</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">script_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="c1"># se agrega al syspath para que sea posible la importación siguiente</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">script_dir</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1"># se importa la aplicación Flask [app] asignándole el nombre [application]</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">main_withmysql</span><span class="w"> </span><span class="kn">import</span> <span class="n">app</span> <span class="k">as</span> <span class="n">application</span>
+</code></pre></div></td></tr></table></div>
+<p>El script <strong>[main_withmysql.wsgi]</strong> será el destino que ejecutará el servidor Apache en modo WSGI:</p>
+<ul>
+  <li>el objetivo del servidor Apache podría haber sido el script <b>[main_withmysql.py], </b>tal como se hizo anteriormente con el script <b>[date_time_server.py]</b>. Pero habría sido necesario modificarlo un poco:
+    <ul>
+      <li>a diferencia del modo de ejecución con un script de consola, con Apache, la carpeta que contiene el objetivo <b>[main_withmysql.py] </b>no forma parte de la ruta de Python. Por lo tanto, la línea 6 del script <b>[main_withmysql.py] </b>genera un error;
+      </li>
+      <li>la segunda modificación que habría que haber realizado es que, en <b>[main_withmysql], </b>la aplicación Flask se referencia mediante el identificador <b>[app]</b>. Sabemos que, para Apache / WSGI, también debe referenciarse mediante un identificador <b>[application]</b>;
+      </li>
+    </ul>
+  </li>
+  <li>en lugar de modificar <b>[main_withmysql.py]</b>, cambiamos el destino de Apache. A partir de ahora será el script <b>[main_withmysql.wsgi] </b>mencionado anteriormente:
+    <ul>
+      <li>líneas 1-7: se agrega la carpeta del script a la ruta de Python. De este modo, la línea 6 de <b>[main_withmysql.py] </b>ya no genera un error;
+      </li>
+      <li>líneas 9-10: la importación de <b>[main_withmysql.py] </b>provoca su ejecución. Además, se hace referencia a la aplicación Flask <b>[app], </b>que se encuentra en <b>[main_withmysql.py], </b>con el identificador <b>[application] </b>que necesita Apache en modo WSGI;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Se hace lo mismo con el script <strong>[main_withpgres.wsgi]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># carpeta de este archivo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import os</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">script_dir = os.path.dirname(os.path.abspath(__file__))</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># se agrega al syspath para que la importación siguiente sea posible</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import sys</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">sys.path.insert(0, script_dir)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># importamos la aplicación Flask [app] y le asignamos el nombre [application]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">from <span style="background-color:#fff2cc">main_withpgres</span> import app as application</span></span>
+</code></pre></div>
+
+<p>Ya contamos con los objetivos ejecutables para el servidor Apache. Ahora debemos crear dos servidores virtuales, uno para cada objetivo.</p>
+<p>En <strong>[&lt;laragon&gt;\etc\apache2\sites-enabled]</strong>, creamos el archivo <strong>[flask-impots-withmysql.conf]</strong> (el nombre que le demos no importa):</p>
+<p><img src="images/10000000000002D50000013F509BBA03.png" width="316" height="139" style="width:8.37cm;height:3.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D50000013F509BBA03.png" /></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"># carpeta del script .wsgi</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#000000">define ROOT</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-servers/12/apache&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># nombre del sitio web configurado por este archivo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># aquí se llamará flask-impots-withmysql</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># los URL serán del tipo http(s)://flask-impots-withmysql/ruta</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define SITE </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">flask-impots-withmysql</span><span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># Agrega la dirección IP 127.0.0.1 para el sitio SITE en c:/windows/system32/drivers/etc/hosts</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ingresa aquí las rutas de las bibliotecas de Python que se van a utilizar; sepáralas con comas</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># aquí las bibliotecas de un entorno virtual de Python</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#000000">WSGIPythonPath</span><span style="color:#000000">  </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># Directorio principal de Python: solo es necesario si hay varias versiones de Python instaladas</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># WSGIPythonHome &quot;C:/Archivos de programa/Python38&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL HTTP</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /, los URL tendrán el formato /{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /impuestos, los URL tendrán el formato /impuestos/{prefixe_url}/acción/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># donde [prefixe_url] se define en parameters.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="background-color:#fff2cc;color:#000000">WSGIScriptAlias / </span><span style="background-color:#fff2cc;color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerName ${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        AllowOverride All</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Require all granted</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL protegidas con HTTPS</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /, los URL tendrán el formato /{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /impuestos, los URL tendrán el formato /impuestos/{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># donde [prefixe_url] se define en parameters.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="background-color:#fff2cc;color:#000000">WSGIScriptAlias / </span><span style="background-color:#fff2cc;color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerName ${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        AllowOverride All</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Require all granted</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLEngine on</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 2: la raíz de la aplicación, la carpeta <b>[apache] </b>que hemos creado;
+  </li>
+  <li>líneas 23 y 38: el destino <b>[main_witmysql.wsgi] </b>que hemos creado;
+  </li>
+  <li>línea 7: el servidor virtual se llamará <b>[flask-impots-withmysql]</b>;
+  </li>
+  <li>línea 13: la directiva <b>[WSGIPythonPath] </b>permite agregar carpetas a la ruta de Python. Aquí, Apache no sabe que hemos utilizado un entorno virtual para desarrollar la aplicación y que todos los módulos utilizados por la aplicación se encuentran en ese entorno virtual. Por lo tanto, en la línea 13, agregamos la carpeta que contiene todos los módulos del entorno virtual utilizado. Una opción es copiar esta carpeta a otra ubicación del sistema de archivos y hacer referencia a esa ubicación. Otra opción es agregar esta carpeta a la ruta de Python directamente en el objetivo <b>[main_witmysql.wsgi] </b>(probablemente sea la mejor solución);
+  </li>
+  <li>línea 16: se le puede indicar a Apache la carpeta de instalación de Python en el sistema de archivos. Normalmente, esta se encuentra en el PATH de la máquina y, a menudo, esta línea es innecesaria (ese era el caso aquí). Sin embargo, puede haber varias instalaciones de Python en la máquina y es posible que la deseada no se encuentre en el PATH de la máquina. En ese caso, esta línea resuelve el problema;
+  </li>
+</ul>
+
+<p>De la misma manera, creamos un archivo <strong>[flask-impots-withpgres.conf]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"># carpeta del script .wsgi</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define ROOT </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-servers/12/apache&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># nombre del sitio web configurado por este archivo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># aquí se llamará flask-impots-withmysql</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># los URL serán del tipo http(s)://flask-impots-withmysql/ruta</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define SITE </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">flask-impots-withpgres</span><span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">#: agrega la dirección IP 127.0.0.1 para el sitio SITE en c:/windows/system32/drivers/etc/hosts</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ingresa aquí las rutas de las bibliotecas de Python que se van a utilizar; sepáralas con comas</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># aquí las bibliotecas de un entorno virtual de Python</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">WSGIPythonPath  </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># Directorio principal de Python: solo es necesario si hay varias versiones de Python instaladas</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># WSGIPythonHome &quot;C:/Archivos de programa/Python38&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL HTTP</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /, los URL tendrán el formato /{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /impuestos, los URL tendrán el formato /impuestos/{prefixe_url}/acción/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># donde [prefixe_url] se define en parameters.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    WSGIScriptAlias / </span><span style="color:#a31515">&quot;${ROOT}/</span><span style="background-color:#fff2cc;color:#a31515">main_withpgres.wsgi</span><span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerName ${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        AllowOverride All</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Require all granted</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL protegidas con HTTPS</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /, los URL tendrán el formato /{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /impuestos, los URL tendrán el formato /impuestos/{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>#, donde [prefixe_url] se define en parameters.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    WSGIScriptAlias / </span><span style="color:#a31515">&quot;${ROOT}/</span><span style="background-color:#fff2cc;color:#a31515">main_withpgres.wsgi</span><span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerName ${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        AllowOverride All</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Require all granted</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLEngine on</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+</code></pre></div>
+
+<p>Guardamos todos estos archivos, iniciamos el servidor Apache y los archivos SGBD, MySQL y PostgreSQL. La aplicación está configurada con el prefijo de URL, <strong>[/do]</strong> y <strong>[with_csrftoken=False]</strong> (no hay token CSRF) en <strong>[configs/parameters.py]</strong>. Solicitamos el URL y <strong>el [https://flask-impots-withmysql/do]</strong>. La respuesta del servidor es la siguiente:</p>
+<p><img src="images/100000000000057D00000361B0EE302C.png" width="613" height="378" style="width:16.23cm;height:9.992cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000057D00000361B0EE302C.png" /></p>
+<p>Ahora solicitamos el URL y <strong>el [https://flask-impots-pgres/do]</strong>. La respuesta es la siguiente:</p>
+<p><img src="images/10000000000005590000033B0EA43231.png" width="597" height="361" style="width:15.79cm;height:9.539cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005590000033B0EA43231.png" /></p>
+<p>Ambas aplicaciones funcionan con normalidad.</p>
+<p>Ahora cambiemos el parámetro <strong>[WSGIScriptAlias]</strong> por <strong>[flask-impots-withmysql.conf]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># carpeta del script .wsgi</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define ROOT </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-servers/12/apache&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL HTTP</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /, los URL tendrán el formato /{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /impuestos, los URL tendrán el formato /impuestos/{prefixe_url}/acción/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># donde [prefixe_url] se define en parameters.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/impots</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    …</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL protegidas con HTTPS</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias / los URL tendrán el formato /{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># con el alias /impuestos, los URL tendrán el formato /impuestos/{prefixe_url}/acción/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>#, donde [prefixe_url] se define en parameters.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/impots</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    …</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/VirtualHost&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>líneas 11 y 20, el alias WSI ahora es <b>[/impots]</b>;
+  </li>
+</ul>
+
+<p>Detendremos y reiniciaremos el servidor Apache, y luego solicitaremos el URL <strong>[https://flask-impots-withmysql/impots/do]</strong>. La respuesta del servidor es la siguiente:</p>
+<p><img src="images/10000000000004710000011268577D28.png" width="497" height="120" style="width:13.152cm;height:3.17cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004710000011268577D28.png" /></p>
+<p>Se ha producido un error. El URL <strong>[1]</strong> nos indica la causa. Debería haber sido <strong>[https://flask-impots-withmysql/impots/do/afficher-vue-authentification]</strong>. Falta el alias WSGI. Es un error de nuestra aplicación. Esta sí sabe manejar un prefijo de URL (/do sí está presente). Se podría pensar que al agregar el prefijo <strong>[/impots/do]</strong> a nuestra aplicación se resolvería el problema anterior. Pero no es así. Entonces surgen otros tipos de problemas. El alias WSGI no se comporta como un prefijo de URL.</p>
+<p>Intentemos entender qué pasó. Solicitamos el URL a partir de <strong>[https://flask-impots-withmysql/impots/do]</strong>. Esperábamos que apareciera la pantalla de autenticación. En <strong>[1]</strong>, arriba, vemos que la aplicación solicitó su visualización, pero no con el URL correcto. Analicemos el recorrido de la solicitud <strong>[https://flask-impots-withmysql/impots/do]</strong>.</p>
+<p>En primer lugar, se ejecutó la siguiente ruta (configs/routes.py):</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># las rutas de la aplicación Flask</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># raíz de la aplicación</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    app.add_url_rule(</span><span style="background-color:#fff2cc;color:#0000ff">f</span><span style="background-color:#fff2cc;color:#a31515">&#x27;</span><span style="background-color:#fff2cc;color:#000000">{prefix_url}</span><span style="background-color:#fff2cc;color:#a31515">/</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                     view_func=routes.index)</span></span>
+</code></pre></div>
+
+<p>La ruta de la línea 3 es, en nuestro ejemplo, <strong>[https://flask-impots-withmysql/impots/do]</strong>. Se observa que a la ruta se le ha eliminado la parte <strong>[https://flask-impots-withmysql/impots]</strong>, quedando simplemente como <strong>[/do]</strong>. En cuanto a la parte <strong>[https://flask-impots-withmysql]</strong>, es normal, ya que el nombre del servidor no se incluye en la ruta. Pero se observa que tampoco incluye el alias WSGI <strong>[/impots]</strong>. Este es un punto importante. Incluso con un alias WSGI, nuestras rutas iniciales siguen siendo válidas.</p>
+<p>Ahora veamos qué hace la función <strong>[index]</strong> de la línea 4 (configs/routes_without_csrftoken):</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># raíz de la aplicación</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> index() -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># redirección a /init-session/html</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> redirect(url_for(</span><span style="color:#a31515">&quot;init_session&quot;</span><span style="color:#000000">, type_response=</span><span style="color:#a31515">&quot;html&quot;</span><span style="color:#000000">), status.HTTP_302_FOUND)</span></span></span>
+</code></pre></div>
+
+<p>En la línea 4, se nos redirige a la función URL desde la función <strong>[init_session]</strong>. En <strong>[configs/routes.py]</strong>, esta función se ha asociado a la ruta <strong>[/do/init-session/html]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># init-session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    app.add_url_rule(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&#x27;</span><span style="background-color:#fff2cc;color:#000000">{prefix_url}</span><span style="background-color:#fff2cc;color:#a31515">/init-session/&lt;string:type_response&gt;</span><span style="background-color:#fff2cc;color:#000000">{csrftoken_param}</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                     view_func=routes.init_session)</span></span>
+</code></pre></div>
+
+<p>En la línea 2, en nuestra prueba <strong>[csrftoken_param]</strong>, la cadena está vacía. La aplicación no maneja aquí el token CSRF.</p>
+<p>La función <strong>[init_session]</strong> se define de la siguiente manera (configs/routes_without_csrftoken):</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># init-session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> init_session(type_response: str) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># se ejecuta el controlador asociado a la acción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+</code></pre></div>
+
+<p>En la línea 4, comienza la cadena de procesamiento de la acción <strong>[init-session]</strong>. Esta cadena termina de la siguiente manera en <strong>[responses/HtmlResponse]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ahora hay que generar el URL de redirección sin olvidar el token CSRF si se solicita</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            csrf_token = </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span><span style="color:#000000">{generate_csrf()}</span><span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            csrf_token = </span><span style="color:#a31515">&quot;&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># respuesta de redirección</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> redirect(</span><span style="background-color:#fff2cc;color:#0000ff">f</span><span style="background-color:#fff2cc;color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#000000">{config</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">][</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;prefix_url&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">]</span><span style="background-color:#fff2cc;color:#000000">}{ads</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;to&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">]</span><span style="background-color:#fff2cc;color:#000000">}{csrf_token}</span><span style="background-color:#fff2cc;color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#000000">)</span><span style="color:#000000">, status.HTTP_302_FOUND</span></span></span>
+</code></pre></div>
+
+<p>La acción <strong>[init-session]</strong> es una acción ADS (Acción «Do Something») que termina con una redirección a una vista, en la línea 9. Ahí es donde radica el problema. La función <strong>[redirect]</strong> de la línea 9 no agrega automáticamente el alias WSGI a la redirección URL. Esto es lo que nos muestra la captura de pantalla anterior. Falta el alias /impuestos en el objeto de redirección URL.</p>
+<p>La siguiente versión resuelve el problema del alias WSGI.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Este curso-tutorial, escrito por <strong>Serge Tahé</strong>, se pone a disposición del público de acuerdo con los términos de la
+        <em>Creative Commons Reconocimiento – Sin uso comercial –
+        Compartir igual 3.0 sin modificaciones</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

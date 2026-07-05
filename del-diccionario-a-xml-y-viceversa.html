@@ -1,0 +1,1697 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ales-python-flask-sept-2020/del-diccionario-a-xml-y-viceversa.html">
+      
+      
+        <link rel="prev" href="-ejercicio-practico-version-8.html">
+      
+      
+        <link rel="next" href="ejercicio-practico-version-9.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>26. Del diccionario a XML y viceversa - Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#26-del-diccionario-a-xml-y-viceversa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" class="md-header__button md-logo" aria-label="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              26. Del diccionario a XML y viceversa
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar al modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar al modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar al modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar al modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ales-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" class="md-nav__button md-logo" aria-label="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ales-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prologo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Prólogo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="instalacion-de-un-entorno-de-trabajo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación de un entorno de trabajo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conceptos-basicos-de-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Conceptos básicos de Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-cadenas-de-caracteres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Las cadenas de caracteres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-excepciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Las excepciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-funciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Las funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="los-archivos-de-texto.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Los archivos de texto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-de-aplicacion---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Ejercicio de aplicación – versión 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-importaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Las importaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Ejercicio práctico: versión 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Ejercicio práctico: versión 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-clases-y-los-objetos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Las clases y los objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-clases-genericas-baseentity-y-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Las clases genéricas [BaseEntity] y [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arquitectura-en-capas-y-programacion-por-interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Arquitectura en capas y programación por interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-de-aplicacion---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Ejercicio de aplicación - versión 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Uso de SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-sgbd-y-postgresql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Uso de SGBD y PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="escribir-codigo-independiente-de-sgbd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Escribir código independiente de SGBD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-orm-sqlalchemy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Uso de ORM SQLALCHEMY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Ejercicio práctico: versión 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="funciones-de-internet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Funciones de Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="servicios-web-con-el-marco-flask.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Servicios web con el marco Flask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Ejercicio práctico: versión 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Ejercicio práctico: versión 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-ejercicio-practico-version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Ejercicio práctico: versión 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="del-diccionario-a-xml-y-viceversa.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Del diccionario a XML y viceversa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Ejercicio práctico: versión 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Ejercicio práctico: versión 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Ejercicio práctico: versión 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Ejercicio práctico: versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clientes-web-para-los-servicios-json-y-xml-de-la-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Clientes web para los servicios jSON y XML de la versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="el-modo-html-de-la-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. El modo HTML de la versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Ejercicio práctico: versión 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Ejercicio práctico: versión 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Ejercicio práctico: versión 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Ejercicio práctico: versión 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Ejercicio práctico: versión 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-18-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Ejercicio práctico: versión 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="dudictionnairea" name="dudictionnairea" class="odt-bookmark-anchor"></span>
+<span id="toc48549208" name="toc48549208" class="odt-bookmark-anchor"></span></p>
+<h1 id="26-del-diccionario-a-xml-y-viceversa">26. <span style="color: #365f91">Del diccionario a XML y viceversa</span></h1>
+<p>Aquí nos proponemos descubrir el módulo <strong>[xml2dict],</strong> que permite transformar:</p>
+<ul>
+  <li>una cadena XML en un diccionario:
+  </li>
+  <li>un diccionario en una cadena XML;
+  </li>
+</ul>
+
+<p>Antes de la llegada del jSON, la respuesta de los servicios web solía ser XML (eXtended Markup Language). Por otra parte, el protocolo de estos servicios web solía ser SOAP (Simple Object Process Protocol). SOAP es un protocolo que se basa en el protocolo HTTP de la web. Actualmente (2020), los servicios web suelen ser del tipo REST (Representational State Transfer). Los servicios web que hemos estudiado no son de ninguno de estos tipos, pero definitivamente se acercan más a REST que a SOAP. Sin embargo, prefiero decir que son de tipo «libre» o «desconocido», ya que no cumplen con todas las reglas del REST.</p>
+<p>Vamos a demostrar qué tan fácil es transformar nuestras arquitecturas cliente/servidor jSON en arquitecturas cliente/servidor XML. Solo hay que usar el módulo <strong>[xmltodict]</strong>.</p>
+<p>Comenzamos instalándolo en un terminal de Python:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content">(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\packages&gt;<span style="background-color:#fff2cc">pip install xmltodict</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Collecting xmltodict</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  Using cached xmltodict-0.12.0-py2.py3-none-any.whl (9.2 kB)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Installing collected packages: xmltodict</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Successfully installed xmltodict-0.12.0</span></span>
+</code></pre></div>
+
+<p>Una vez hecho esto, veremos con un ejemplo qué se puede hacer con este módulo:</p>
+<p><img src="images/100000000000015D0000011089FC3BAD.png" width="153" height="119" style="width:4.039cm;height:3.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D0000011089FC3BAD.png" /></p>
+<p>El script <strong>[xml_01]</strong> es el siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span>collections<span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">OrderedDict</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="background-color:#bdd6ee">xmltodict</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># xmltodict.parse para pasar de XML al diccionario. El diccionario debe tener una raíz</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># el diccionario generado es de tipo OrderedDict</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># xmltodict.unparse para pasar del diccionario a XML</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> </span><span style="background-color:#bdd6ee;color:#000000">ordereddict2dict</span><span style="color:#000000">(</span><span style="color:#808080">ordered_dictionary</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008000">…</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> </span><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#808080">message</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">dictionary</span><span style="color:#000000">: </span><span style="color:#2b91af">dict</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># registros</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;\n{message}-------&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;dictionnaire={dictionary}&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># diccionario -&gt; xml</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    xml1 = </span><span style="background-color:#bdd6ee">xmltodict</span><span style="background-color:#bdd6ee;color:#000000">.unparse</span><span style="color:#000000">(</span><span style="color:#808080">dictionary</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;xml={xml1}&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># xml → OrderedDict</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    ordereddict_dictionary1 = </span><span style="background-color:#bdd6ee">xmltodict</span><span style="background-color:#bdd6ee;color:#000000">.parse</span><span style="color:#000000">(xml1)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;ordereddict_dictionary1={ordereddict_dictionary1}&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># OrderedDict -&gt; diccionario</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;dict_dictionary1={</span><span style="background-color:#bdd6ee;color:#a31515">ordereddict2dict</span><span style="color:#a31515">(ordereddict_dictionary1)}&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># prueba 1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 1&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;nom&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;séléné&quot;</span><span style="color:#000000">})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># prueba 2</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 2&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;famille&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;père&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;prénom&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;andré&quot;</span><span style="color:#000000">}, </span><span style="color:#a31515">&quot;mère&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;prénom&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;angèle&quot;</span><span style="color:#000000">}, </span><span style="color:#a31515">&quot;nom&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;séléné&quot;</span><span style="color:#000000">}})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># prueba 3</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 3&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;famille&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;nom&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;séléné&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;père&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;prénom&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;andré&quot;</span><span style="color:#000000">}, </span><span style="color:#a31515">&quot;mère&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;prénom&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;angèle&quot;</span><span style="color:#000000">},</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                                 </span><span style="color:#a31515">&quot;hobbies&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;chant&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;footing&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># prueba 4</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 4&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&#x27;réponse&#x27;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&#x27;errores&#x27;: [&#x27;Se requiere el método GET con los únicos parámetros [marié, enfants, salaire]&#x27;, &#x27;falta el parámetro [marié]&#x27;,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">&#x27;falta el parámetro [enfants]&#x27;, &#x27;falta el parámetro [salaire]&#x27;]}})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># prueba 5</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 5&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&#x27;réponse&#x27;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&#x27;resultado&#x27;: {&#x27;id&#x27;: 0, &#x27;casado&#x27;: &#x27;sí&#x27;, &#x27;hijos&#x27;: 2, &#x27;salario&#x27;: 50000, &#x27;impuesto&#x27;: 1384, &#x27;descuento&#x27;: 384, &#x27;recargo&#x27;: 0,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">               <span style="color:#000000">&#x27;«descuento»: 347, &#x27;tasa&#x27;: 0.14}}})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># prueba 6</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 6&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;root&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&#x27;liste&#x27;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;un&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;deux&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;trois&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># prueba 7</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 7&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;root&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&#x27;liste&#x27;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[{</span><span style="font-weight:bold;color:#a31515">&quot;un&quot;</span><span style="font-weight:bold;color:#000000">: [10, 11]</span><span style="color:#000000">}, {</span><span style="color:#a31515">&quot;deux&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[20, 21]</span><span style="color:#000000">}, {</span><span style="color:#a31515">&quot;trois&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[30, 31]</span><span style="color:#000000">}]}})</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>líneas 14-25: la función <b>[transform] </b>recibe un texto que se debe escribir <b>[message] </b>y un diccionario <b>[dictionary]</b>;
+  </li>
+  <li>línea 16: se muestra el mensaje;
+  </li>
+  <li>línea 17: se muestra el diccionario recibido;
+  </li>
+  <li>líneas 19-20: este diccionario se transforma en la cadena XML y esta se muestra. El método que realiza esta tarea es <b>[xmltodict.unparse]</b>;
+  </li>
+  <li>líneas 21-23: la cadena anterior XML se transforma en un diccionario y este se muestra. El método que realiza esto es <b>[xmltodict.parse]</b>. Este método no genera un diccionario de tipo <b>[dict], </b>sino de tipo <b>[OrderedDict] </b>(línea 1);
+  </li>
+  <li>líneas 24-25: se transforma el tipo <b>[OrderedDict] </b>obtenido en el tipo <b>[dict] </b>mediante el método (aún no escrito) <b>[ordereddict2dict]</b>. Este método funciona de manera recursiva. Si algunos valores del diccionario son de tipo <b>[OrderedDict, list]</b>, se examinan los valores de esas colecciones para determinar si también son de tipo <b>[OrderedDict]</b>. Si es así, se transforman al tipo <b>[dict]</b>. Cabe señalar que el método <b>[xmltodict.parse] </b>no genera ningún diccionario de tipo <b>[dict]</b>;
+  </li>
+</ul>
+
+<p>Antes de analizar las funciones que faltan, revisemos los resultados para ver qué es lo que se busca:</p>
+<p>La prueba 1 (líneas 28-29) produce los siguientes resultados:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">test 1-------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dictionnaire={&#x27;nom&#x27;: &#x27;séléné&#x27;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">xml=&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;nom&gt;séléné&lt;/nom&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ordereddict_dictionary1=OrderedDict(<span style="font-weight:bold">[(&#x27;nom&#x27;, &#x27;séléné&#x27;)]</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dict_dictionary1={&#x27;nom&#x27;: &#x27;séléné&#x27;}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 2: el diccionario que se está probando. Cabe destacar un punto importante: el método <b>[xml2dict.unparse] </b>requiere que el diccionario tenga la forma {‘clave’: valor}, donde <b>[valeur] </b>puede ser, a su vez, un diccionario, una lista o un tipo simple;
+  </li>
+  <li>líneas 3-4: la cadena XML derivada del diccionario. Va precedida del encabezado <b>[&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;\n], </b>que normalmente es la primera línea de un archivo XML;
+  </li>
+  <li>línea 5: el tipo <b>[OrderedDict] </b>obtenido mediante el método <b>[xml2dict.parse], </b>al que se le pasa como parámetro la cadena XML anterior;
+  </li>
+  <li>línea 6: el diccionario de tipo <b>[dict] </b>obtenido al aplicar el método <b>[ordereddict2dict] </b>al tipo anterior. Aquí se encuentra el diccionario original de la línea 2;
+  </li>
+</ul>
+
+<p>Todas las demás pruebas siguen el mismo esquema y deberían permitirle comprender cómo pasar de un diccionario a una cadena XML y, a continuación, de esa cadena XML al diccionario original.</p>
+<p>Las demás pruebas arrojan los siguientes resultados:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">test 2</span>-------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dictionnaire={&#x27;famille&#x27;: {&#x27;père&#x27;: {&#x27;prénom&#x27;: &#x27;andré&#x27;}, &#x27;mère&#x27;: {&#x27;prénom&#x27;: &#x27;angèle&#x27;}, &#x27;nom&#x27;: &#x27;séléné&#x27;}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">xml=&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;famille&gt;&lt;père&gt;&lt;prénom&gt;andré&lt;/prénom&gt;&lt;/père&gt;&lt;mère&gt;&lt;prénom&gt;angèle&lt;/prénom&gt;&lt;/mère&gt;&lt;nom&gt;séléné&lt;/nom&gt;&lt;/famille&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ordereddict_dictionary1=OrderedDict(<span style="font-weight:bold">[(&#x27;famille&#x27;, OrderedDict([(&#x27;père&#x27;, OrderedDict([(&#x27;prénom&#x27;, &#x27;andré&#x27;)]</span>)), (&#x27;mère&#x27;, OrderedDict(<span style="font-weight:bold">[(&#x27;prénom&#x27;, &#x27;angèle&#x27;)]</span>)), (&#x27;nom&#x27;, &#x27;séléné&#x27;)]))])</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dict_dictionary1={&#x27;famille&#x27;: {&#x27;père&#x27;: {&#x27;prénom&#x27;: &#x27;andré&#x27;}, &#x27;mère&#x27;: {&#x27;prénom&#x27;: &#x27;angèle&#x27;}, &#x27;nom&#x27;: &#x27;séléné&#x27;}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">test 3</span>-------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dictionnaire={&#x27;famille&#x27;: {&#x27;nom&#x27;: &#x27;séléné&#x27;, &#x27;père&#x27;: {&#x27;prénom&#x27;: &#x27;andré&#x27;}, &#x27;mère&#x27;: {&#x27;prénom&#x27;: &#x27;angèle&#x27;}, &#x27;hobbies&#x27;: <span style="font-weight:bold">[&#x27;chant&#x27;, &#x27;footing&#x27;]</span>}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">xml=&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;famille&gt;&lt;nom&gt;séléné&lt;/nom&gt;&lt;père&gt;&lt;prénom&gt;andré&lt;/prénom&gt;&lt;/père&gt;&lt;mère&gt;&lt;prénom&gt;angèle&lt;/prénom&gt;&lt;/mère&gt;&lt;hobbies&gt;chant&lt;/hobbies&gt;&lt;hobbies&gt;footing&lt;/hobbies&gt;&lt;/famille&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ordereddict_dictionary1=OrderedDict(<span style="font-weight:bold">[(&#x27;famille&#x27;, OrderedDict([(&#x27;nom&#x27;, &#x27;séléné&#x27;), (&#x27;père&#x27;, OrderedDict([(&#x27;prénom&#x27;, &#x27;andré&#x27;)]</span>)), (&#x27;mère&#x27;, OrderedDict(<span style="font-weight:bold">[(&#x27;prénom&#x27;, &#x27;angèle&#x27;)]</span>)), (&#x27;hobbies&#x27;, <span style="font-weight:bold">[&#x27;chant&#x27;, &#x27;footing&#x27;]</span>)]))])</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dict_dictionary1={&#x27;famille&#x27;: {&#x27;nom&#x27;: &#x27;séléné&#x27;, &#x27;père&#x27;: {&#x27;prénom&#x27;: &#x27;andré&#x27;}, &#x27;mère&#x27;: {&#x27;prénom&#x27;: &#x27;angèle&#x27;}, &#x27;hobbies&#x27;: <span style="font-weight:bold">[&#x27;chant&#x27;, &#x27;footing&#x27;]</span>}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">test 4</span>-------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dictionnaire={&#x27;réponse&#x27;: {&#x27;erreurs&#x27;: <span style="font-weight:bold">[&#x27;Méthode GET requise avec les seuls paramètres [marié, enfants, salaire]</span>&#x27;, &#x27;paramètre <span style="font-weight:bold">[marié]</span> manquant&#x27;, &#x27;paramètre <span style="font-weight:bold">[enfants]</span> manquant&#x27;, &#x27;paramètre <span style="font-weight:bold">[salaire]</span> manquant&#x27;]}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">xml=&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;réponse&gt;&lt;erreurs&gt;Méthode GET requise avec les seuls paramètres <span style="font-weight:bold">[marié, enfants, salaire]</span>&lt;/erreurs&gt;&lt;erreurs&gt;paramètre <span style="font-weight:bold">[marié]</span> manquant&lt;/erreurs&gt;&lt;erreurs&gt;paramètre <span style="font-weight:bold">[enfants]</span> manquant&lt;/erreurs&gt;&lt;erreurs&gt;paramètre <span style="font-weight:bold">[salaire]</span> manquant&lt;/erreurs&gt;&lt;/réponse&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ordereddict_dictionary1=OrderedDict(<span style="font-weight:bold">[(&#x27;réponse&#x27;, OrderedDict([(&#x27;erreurs&#x27;, [&#x27;Méthode GET requise avec les seuls paramètres [marié, enfants, salaire]</span>&#x27;, &#x27;paramètre <span style="font-weight:bold">[marié]</span> manquant&#x27;, &#x27;paramètre <span style="font-weight:bold">[enfants]</span> manquant&#x27;, &#x27;paramètre <span style="font-weight:bold">[salaire]</span> manquant&#x27;])]))])</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dict_dictionary1={&#x27;réponse&#x27;: {&#x27;erreurs&#x27;: <span style="font-weight:bold">[&#x27;Méthode GET requise avec les seuls paramètres [marié, enfants, salaire]</span>&#x27;, &#x27;paramètre <span style="font-weight:bold">[marié]</span> manquant&#x27;, &#x27;paramètre <span style="font-weight:bold">[enfants]</span> manquant&#x27;, &#x27;paramètre <span style="font-weight:bold">[salaire]</span> manquant&#x27;]}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">test 5</span>-------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dictionnaire={&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;id&#x27;: 0, &#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: 2, &#x27;salaire&#x27;: 50000, &#x27;impôt&#x27;: 1384, &#x27;décôte&#x27;: 384, &#x27;surcôte&#x27;: 0, &#x27;réduction&#x27;: 347, &#x27;taux&#x27;: 0.14}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">xml=&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;réponse&gt;&lt;result&gt;&lt;id&gt;0&lt;/id&gt;&lt;marié&gt;oui&lt;/marié&gt;&lt;enfants&gt;2&lt;/enfants&gt;&lt;salaire&gt;50000&lt;/salaire&gt;&lt;impôt&gt;1384&lt;/impôt&gt;&lt;décôte&gt;384&lt;/décôte&gt;&lt;surcôte&gt;0&lt;/surcôte&gt;&lt;réduction&gt;347&lt;/réduction&gt;&lt;taux&gt;0.14&lt;/taux&gt;&lt;/result&gt;&lt;/réponse&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ordereddict_dictionary1=OrderedDict(<span style="font-weight:bold">[(&#x27;réponse&#x27;, OrderedDict([(&#x27;result&#x27;, OrderedDict([(&#x27;id&#x27;, &#x27;0&#x27;), (&#x27;marié&#x27;, &#x27;oui&#x27;), (&#x27;enfants&#x27;, &#x27;2&#x27;), (&#x27;salaire&#x27;, &#x27;50000&#x27;), (&#x27;impôt&#x27;, &#x27;1384&#x27;), (&#x27;décôte&#x27;, &#x27;384&#x27;), (&#x27;surcôte&#x27;, &#x27;0&#x27;), (&#x27;réduction&#x27;, &#x27;347&#x27;), (&#x27;taux&#x27;, &#x27;0.14&#x27;)]</span>))]))])</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dict_dictionary1={&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;id&#x27;: &#x27;0&#x27;, &#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: &#x27;2&#x27;, &#x27;salaire&#x27;: &#x27;50000&#x27;, &#x27;impôt&#x27;: &#x27;1384&#x27;, &#x27;décôte&#x27;: &#x27;384&#x27;, &#x27;surcôte&#x27;: &#x27;0&#x27;, &#x27;réduction&#x27;: &#x27;347&#x27;, &#x27;taux&#x27;: &#x27;0.14&#x27;}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">test 6</span>-------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dictionnaire={&#x27;root&#x27;: {&#x27;liste&#x27;: <span style="font-weight:bold">[&#x27;un&#x27;, &#x27;deux&#x27;, &#x27;trois&#x27;]</span>}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">xml=&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;root&gt;&lt;liste&gt;un&lt;/liste&gt;&lt;liste&gt;deux&lt;/liste&gt;&lt;liste&gt;trois&lt;/liste&gt;&lt;/root&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ordereddict_dictionary1=OrderedDict(<span style="font-weight:bold">[(&#x27;root&#x27;, OrderedDict([(&#x27;liste&#x27;, [&#x27;un&#x27;, &#x27;deux&#x27;, &#x27;trois&#x27;]</span>)]))])</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dict_dictionary1={&#x27;root&#x27;: {&#x27;liste&#x27;: <span style="font-weight:bold">[&#x27;un&#x27;, &#x27;deux&#x27;, &#x27;trois&#x27;]</span>}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">test 7</span>-------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dictionnaire={&#x27;root&#x27;: {&#x27;liste&#x27;: <span style="font-weight:bold">[{&#x27;un&#x27;: [10, 11]</span>}, {&#x27;deux&#x27;: <span style="font-weight:bold">[20, 21]</span>}, {&#x27;trois&#x27;: <span style="font-weight:bold">[30, 31]</span>}]}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">xml=&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;root&gt;&lt;liste&gt;&lt;un&gt;10&lt;/un&gt;&lt;un&gt;11&lt;/un&gt;&lt;/liste&gt;&lt;liste&gt;&lt;deux&gt;20&lt;/deux&gt;&lt;deux&gt;21&lt;/deux&gt;&lt;/liste&gt;&lt;liste&gt;&lt;trois&gt;30&lt;/trois&gt;&lt;trois&gt;31&lt;/trois&gt;&lt;/liste&gt;&lt;/root&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ordereddict_dictionary1=OrderedDict(<span style="font-weight:bold">[(&#x27;root&#x27;, OrderedDict([(&#x27;liste&#x27;, [OrderedDict([(&#x27;un&#x27;, [&#x27;10&#x27;, &#x27;11&#x27;]</span>)]), OrderedDict(<span style="font-weight:bold">[(&#x27;deux&#x27;, [&#x27;20&#x27;, &#x27;21&#x27;]</span>)]), OrderedDict(<span style="font-weight:bold">[(&#x27;trois&#x27;, [&#x27;30&#x27;, &#x27;31&#x27;]</span>)])])]))])</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dict_dictionary1={&#x27;root&#x27;: {&#x27;liste&#x27;: <span style="font-weight:bold">[{&#x27;un&#x27;: [&#x27;10&#x27;, &#x27;11&#x27;]</span>}, {&#x27;deux&#x27;: <span style="font-weight:bold">[&#x27;20&#x27;, &#x27;21&#x27;]</span>}, {&#x27;trois&#x27;: <span style="font-weight:bold">[&#x27;30&#x27;, &#x27;31&#x27;]</span>}]}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Process finished with exit code 0</span></span>
+</code></pre></div>
+
+<ul>
+  <li>las líneas 23 y 27 muestran un punto importante:
+    <ul>
+      <li>línea 23: los valores asociados a las claves del diccionario <b>[result] </b>son números;
+      </li>
+      <li>línea 26: los valores asociados a las claves del diccionario <b>[ordereddict_dictionary1] </b>son cadenas de caracteres. Esta es una limitación de la biblioteca <b>[xmltodict]</b>. Su método <b>[parse] </b>solo genera cadenas de caracteres. Esto se puede entender fácilmente:
+        <ul>
+          <li>línea 25: la cadena XML a partir de la cual se genera el diccionario. En esta cadena, no hay ninguna indicación del tipo de datos encapsulados en las etiquetas XML. <b>[xmltodict.parse] </b>hace lo más lógico: deja todo como cadenas de caracteres en el diccionario generado. Existen otras bibliotecas similares a <b>[xmltodict] </b>en las que el tipo de datos encapsulados se indica en las etiquetas. Por ejemplo, podríamos encontrar la etiqueta <b>[&lt;enfants type=’int’&gt;2&lt;/enfants&gt;]</b>;
+          </li>
+          <li>la consecuencia de esto es que, al utilizar un diccionario generado por el módulo <b>[xmltodict], </b>es necesario conocer el tipo de datos que encapsula para poder pasar del tipo «str» al tipo real de los datos;
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Ahora analicemos el método <strong>[ordereddict2dict],</strong> que transforma un tipo <strong>[OrderedDict]</strong> en un tipo <strong>[dict]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># xmltodict.parse para pasar de XML al diccionario. El diccionario debe tener una raíz</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># el diccionario generado es de tipo OrderedDict</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># xmltodict.unparse para pasar del diccionario a XML</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> check(</span><span style="color:#808080">value</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># si el valor es de tipo OrderedDict, se transforma</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> isinstance(</span><span style="color:#808080">value</span><span style="color:#000000">, </span><span style="color:#2b91af">OrderedDict</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        value2 = ordereddict2dict(</span><span style="color:#808080">value</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># si el valor es de tipo lista, se transforma</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">elif</span><span style="color:#000000"> isinstance(</span><span style="color:#808080">value</span><span style="color:#000000">, </span><span style="color:#2b91af">list</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        value2 = list2list(</span><span style="color:#808080">value</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se trata de un tipo simple, no de una colección</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        value2 = </span><span style="color:#808080">value</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se devuelve el nuevo valor</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> value2</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> list2list(</span><span style="color:#808080">liste</span><span style="color:#000000">: </span><span style="color:#2b91af">list</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">list</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># la nueva lista</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    newliste = </span><span style="font-weight:bold;color:#000000">[]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se procesan los elementos de la lista de parámetros</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">for</span><span style="color:#000000"> value </span><span style="color:#0000ff">in</span><span style="color:#000000"> </span><span style="color:#808080">liste</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se agrega value a la nueva lista</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        newliste.append(check(value))</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se devuelve la nueva lista</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> newliste</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> ordereddict2dict(</span><span style="color:#808080">ordered_dictionary</span><span style="color:#000000">: </span><span style="color:#2b91af">OrderedDict</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># OrderedDict -&gt; diccionario de manera recursiva</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    newdict = {}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">for</span><span style="color:#000000"> key, value </span><span style="color:#0000ff">in</span><span style="color:#000000"> </span><span style="color:#808080">ordered_dictionary</span><span style="color:#000000">.items():</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se almacena el valor en el nuevo diccionario</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        newdict</span><span style="font-weight:bold;color:#000000">[key]</span><span style="color:#000000"> = check(value)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se devuelve el diccionario</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> newdict</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 30: la función <b>[ordereddict2dict] </b>recibe un tipo <b>[OrderedDict] </b>como parámetro;
+  </li>
+  <li>línea 32: el diccionario de tipo <b>[dict] </b>que la función devolverá en la línea 37;
+  </li>
+  <li>línea 33: se exploran todas las tuplas (clave, valor) del diccionario <b>[ordered_dictionary]</b>;
+  </li>
+  <li>línea 35: en el nuevo diccionario, se conserva la clave <b>[key], </b>pero el valor asociado no es <b>[value], </b>sino <b>[check(value)]</b>. La función <b>[check(value)] </b>se encarga de buscar, si <b>[value] </b>es una colección, todos los elementos de tipo <b>[OrderedDict] </b>y transformarlos al tipo <b>[dict]</b>;
+  </li>
+</ul>
+
+<p>El método <strong>[check]</strong> se define en las líneas 5 a 16:</p>
+<ul>
+  <li>línea 5: no se conoce el tipo de <b>[value]</b>, por lo que no se pudo escribir <b>[value : type]</b>;
+  </li>
+  <li>líneas 7-8: si <b>[value] </b>es de tipo <b>[OrderedDict], </b>entonces se llama de manera recursiva a la función <b>[ordereddict2dict] </b>que acabamos de comentar;
+  </li>
+  <li>líneas 9-11: otro caso posible es que <b>[value] </b>sea una lista. En este caso, en la línea 11, se llama a la función <b>[list2list] </b>de las líneas 19-27;
+  </li>
+  <li>líneas 12-14: el último caso es que <b>[value] </b>no es una colección, sino un tipo simple. La función <b>[check]</b>, al igual que las funciones <b>[ordereddict2dict] </b>y <b>[list2list], </b>es recursiva. Sabemos que, en ese caso, siempre hay que prever el caso en que la recursión se detenga. Las líneas 12-14 representan ese caso;
+  </li>
+  <li>línea 16: la función <b>[check], ya sea </b>llamada de forma recursiva o no, produce un valor <b>[valeur2] </b>que debe reemplazar el parámetro <b>[value] </b>de la línea 5;
+  </li>
+</ul>
+
+<p>El método <strong>[list2list],</strong> definido en las líneas 19 a 27, procesa una lista pasada como parámetro. La recorrerá y reemplazará cualquier valor de tipo <strong>[OrderedDict]</strong> que encuentre en ella por uno de tipo <strong>[dict]</strong>.</p>
+<ul>
+  <li>línea 21: la nueva lista que creará la función;
+  </li>
+  <li>líneas 23-25: todos los valores <b>[value] </b>de la lista se revisan y se reemplazan por el valor <b>[check(value)]</b>. Este valor <b>[value] </b>puede contener a su vez elementos del tipo <b>[list] </b>o <b>[OrderedDict]</b>. Estos serán procesados correctamente por la función recursiva <b>[check]</b>;
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Este curso-tutorial, escrito por <strong>Serge Tahé</strong>, se pone a disposición del público de acuerdo con los términos de la
+        <em>Creative Commons Reconocimiento – Sin uso comercial –
+        Compartir igual 3.0 sin modificaciones</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2370 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ales-python-flask-sept-2020/-ejercicio-practico-version-8.html">
+      
+      
+        <link rel="prev" href="ejercicio-practico-version-7.html">
+      
+      
+        <link rel="next" href="del-diccionario-a-xml-y-viceversa.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>25. Ejercicio práctico: versión 8 - Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#25-ejercicio-practico-version-8" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" class="md-header__button md-logo" aria-label="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              25.  Ejercicio práctico: versión 8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar al modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar al modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar al modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar al modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ales-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" class="md-nav__button md-logo" aria-label="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ales-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prologo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Prólogo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="instalacion-de-un-entorno-de-trabajo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación de un entorno de trabajo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conceptos-basicos-de-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Conceptos básicos de Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-cadenas-de-caracteres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Las cadenas de caracteres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-excepciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Las excepciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-funciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Las funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="los-archivos-de-texto.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Los archivos de texto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-de-aplicacion---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Ejercicio de aplicación – versión 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-importaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Las importaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Ejercicio práctico: versión 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Ejercicio práctico: versión 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-clases-y-los-objetos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Las clases y los objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-clases-genericas-baseentity-y-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Las clases genéricas [BaseEntity] y [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arquitectura-en-capas-y-programacion-por-interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Arquitectura en capas y programación por interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-de-aplicacion---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Ejercicio de aplicación - versión 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Uso de SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-sgbd-y-postgresql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Uso de SGBD y PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="escribir-codigo-independiente-de-sgbd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Escribir código independiente de SGBD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-orm-sqlalchemy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Uso de ORM SQLALCHEMY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Ejercicio práctico: versión 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="funciones-de-internet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Funciones de Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="servicios-web-con-el-marco-flask.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Servicios web con el marco Flask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Ejercicio práctico: versión 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Ejercicio práctico: versión 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Ejercicio práctico: versión 8
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="-ejercicio-practico-version-8.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Ejercicio práctico: versión 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#251-introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.1. Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#252-el-servidor-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.2. El servidor web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="25.2. El servidor web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2521-la-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.2.1. La configuración
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2522-el-script-principal-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.2.2. El script principal [main]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2523-el-controlador-index_controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.2.3. El controlador [index_controller]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#253-el-cliente-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3. El cliente web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="25.3. El cliente web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2531-la-capa-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.1. La capa [dao]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="25.3.1. La capa [dao]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#25311-la-clase-impotsdaowithhttpsession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.1.1. La clase [ImpôtsDaoWithHttpSession]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25312-la-funcion-de-decodificacion-de-la-sesion-de-flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.1.2. La función de decodificación de la sesión de Flask
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25313-la-clase-impotsdaowithhttpsessionfactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.1.3. La clase [ImpôtsDaoWithHttpSessionFactory]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2532-la-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.2. La configuración
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2533-el-script-principal-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.3. El script principal del cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2534-ejecucion-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.4. Ejecución del cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#254-pruebas-de-la-capa-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.4. Pruebas de la capa [dao]
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="del-diccionario-a-xml-y-viceversa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Del diccionario a XML y viceversa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Ejercicio práctico: versión 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Ejercicio práctico: versión 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Ejercicio práctico: versión 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Ejercicio práctico: versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clientes-web-para-los-servicios-json-y-xml-de-la-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Clientes web para los servicios jSON y XML de la versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="el-modo-html-de-la-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. El modo HTML de la versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Ejercicio práctico: versión 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Ejercicio práctico: versión 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Ejercicio práctico: versión 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Ejercicio práctico: versión 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Ejercicio práctico: versión 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-18-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Ejercicio práctico: versión 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="toc48549196" name="toc48549196" class="odt-bookmark-anchor"></span>
+<span id="exercicedapplication4" name="exercicedapplication4" class="odt-bookmark-anchor"></span></p>
+<h1 id="25-ejercicio-practico-version-8">25. <span style="color: #365f91">Ejercicio práctico: versión 8</span></h1>
+<p><span id="toc48549197" name="toc48549197" class="odt-bookmark-anchor"></span></p>
+<h2 id="251-introduccion">25.1. <span style="color: #4f81bd">Introducción</span></h2>
+<p>Vamos a escribir una nueva aplicación cliente/servidor. La novedad del servidor es que administrará una sesión. En lugar de colocar los datos de la administración tributaria en un objeto de ámbito <strong>[application]</strong>, los colocaremos en un objeto de ámbito <strong>[session]</strong>. Al hacerlo, se reduce el rendimiento del código. Cuando un objeto puede ser compartido en modo de solo lectura por todos los usuarios, es preferible convertirlo en un objeto de ámbito <strong>[application]</strong> en lugar de uno de ámbito <strong>[session]</strong>. Se ahorra, como mínimo, ancho de banda, ya que así se reduce el tamaño de la cookie de sesión. Pero queremos mostrar una aplicación cliente/servidor en la que el cliente y el servidor intercambian una cookie de sesión.</p>
+<p>La arquitectura de la aplicación no cambia:</p>
+<p><img src="images/10000000000003BE000003E50F9DB416.png" width="419" height="436" style="width:11.083cm;height:11.532cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003BE000003E50F9DB416.png" /></p>
+<p><span id="toc48549198" name="toc48549198" class="odt-bookmark-anchor"></span></p>
+<h2 id="252-el-servidor-web">25.2. <span style="color: #4f81bd">El servidor web</span></h2>
+<p>La estructura de los scripts del servidor es la siguiente:</p>
+<p><img src="images/100000000000019000000205E9DBED3E.png" width="175" height="226" style="width:4.63cm;height:5.985cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019000000205E9DBED3E.png" /></p>
+<p>La carpeta <strong>[http-servers/03]</strong> se obtiene inicialmente al copiar la carpeta <strong>[http-servers/02]</strong>. Luego se realizan modificaciones.</p>
+<p><span id="toc48549199" name="toc48549199" class="odt-bookmark-anchor"></span></p>
+<h3 id="2521-la-configuracion">25.2.1. <span style="color: #4f81bd">La configuración</span></h3>
+<p>Es la misma que en la <a href="ejercicio-practico-version-7.html#configuration1"><u><span style="color: #0563c1">|versión</span></u></a> anterior| con algunas modificaciones en el script <strong>[config]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"># dependencias absolutas</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    absolute_dependencies = </span><span style="font-weight:bold;color:#000000">[</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># carpetas del proyecto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># BaseEntity, MyException</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{root_dir}/classes/02/entities&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># InterfaceImpôtsDao, InterfaceImpôtsMétier, InterfaceImpôtsUi</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{root_dir}/impots/v04/interfaces&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># AbstractImpôtsdao, ImpôtsConsole, ImpôtsMétier</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{root_dir}/impots/v04/services&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># ImpotsDaoWithAdminDataInDatabase</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{root_dir}/impots/v05/services&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># AdminData, ImpôtsError, TaxPayer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{root_dir}/impots/v04/entities&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># Constantes, Tramos</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{root_dir}/impots/v05/entities&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># index_controller</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">f&quot;{script_dir}/../controllers&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="font-weight:bold;color:#000000"># scripts [config_database, config_layers]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        script_dir,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># Logger, SendAdminMail</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#a31515">f&quot;{root_dir}/impots/http-servers/02/utilities&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ]</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 17: reescribiremos un controlador para la función <b>[index] </b>que procesa el URL / ;
+  </li>
+  <li>línea 21: utilizamos las utilidades de la <a href="ejercicio-practico-version-7.html#lesutilitaires"><u><span style="color: #0563c1">|versión</span></u></a> anterior|;
+  </li>
+</ul>
+
+<p><span id="toc48549200" name="toc48549200" class="odt-bookmark-anchor"></span></p>
+<h3 id="2522-el-script-principal-main">25.2.2. <span style="color: #4f81bd"><strong>El script principal</strong> [main]</span></h3>
+<p>El nuevo script <strong>[main]</strong> introduce algunas modificaciones al script principal <strong>[main]</strong> de la versión anterior:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"># la aplicación Flask puede iniciarse</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">app = Flask(__name__)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># clave secreta de la sesión</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#000000">app.secret_key</span><span style="color:#000000"> = </span><span style="color:#6f008a">os</span><span style="color:#000000">.urandom(12).hex()</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 4: se crea una clave secreta para la aplicación. Sabemos que esta es necesaria para administrar las sesiones;
+  </li>
+</ul>
+
+<p>Además, ya no se solicitan los datos fiscales en el código de <strong>[main]</strong>. Se eliminan las siguientes líneas:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># recuperación de datos de la administración tributaria</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">erreur = </span><span style="color:#0000ff">False</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># admindata será un dato de alcance de la aplicación de solo lectura</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;admindata&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;layers&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;dao&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">.get_admindata()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># registro de éxito</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    logger.write(</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[serveur]</span><span style="color:#a31515"> connexion à la base de données réussie\n&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">except</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span><span style="color:#000000"> </span><span style="color:#0000ff">as</span><span style="color:#000000"> ex:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se registra el error</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    erreur = </span><span style="color:#0000ff">True</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># registro de error</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    log = </span><span style="color:#a31515">f&quot;L&#x27;erreur suivante s&#x27;est produite : {ex}&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># consola</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    print(log)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># archivo de registros</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    logger.write(</span><span style="color:#a31515">f&quot;{log}\n&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># correo al administrador</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    send_adminmail(</span><span style="color:#6f008a">config</span><span style="color:#000000">, log)</span></span></span>
+</code></pre></div>
+
+<p>Además, el controlador <strong>[index_controller]</strong> admite un parámetro adicional, la sesión de Flask:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> <span style="color:#6f008a">flask</span> <span style="color:#0000ff">import</span> request, Flask, <span style="background-color:#fff2cc">session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">….        </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">         # se hace que un controlador ejecute la consulta</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        résultat, status_code = <span style="color:#6f008a">index_controller</span>.execute(request, <span style="background-color:#fff2cc">session</span>, <span style="color:#6f008a">config</span>)</span></span>
+</code></pre></div>
+
+<p><span id="toc48549201" name="toc48549201" class="odt-bookmark-anchor"></span></p>
+<h3 id="2523-el-controlador-index_controller">25.2.3. <span style="color: #4f81bd"><strong>El controlador</strong> [index_controller]</span></h3>
+<p>El controlador <strong>[index_controller]</strong> ahora gestiona una sesión:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># importación de dependencias</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">os</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">re</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">threading</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">flask_api</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> status</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">werkzeug</span><span style="color:#000000">.</span><span style="color:#6f008a">local</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> LocalProxy</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL configurada: /?casado=xx&amp;hijos=yy&amp;salario=zz</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">AdminData</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">AdminData</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">ImpôtsError</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> execute(</span><span style="color:#808080">request</span><span style="color:#000000">: LocalProxy, </span><span style="background-color:#fff2cc;color:#808080">session</span><span style="color:#000000">: LocalProxy, </span><span style="color:#808080">config</span><span style="color:#000000">: </span><span style="color:#2b91af">dict</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">tuple</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># dependencias</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">TaxPayer</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">TaxPayer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># al principio no había errores</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    erreurs = </span><span style="font-weight:bold;color:#000000">[]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># ¿Hay errores?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> erreurs:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se devuelve un mensaje de error al cliente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span><span style="color:#a31515">&quot;réponse&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;erreurs&quot;</span><span style="color:#000000">: erreurs}}, status.HTTP_400_BAD_REQUEST</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># sin errores, se puede trabajar</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se recupera la configuración asociada al hilo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2b91af">thread_name</span><span style="color:#000000"> = </span><span style="color:#6f008a">threading</span><span style="color:#000000">.current_thread().name</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    logger = </span><span style="color:#808080">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#2b91af">thread_name</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;config&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;logger&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se ejecuta la consulta</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    réponse = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># el caso más sencillo: admindata ya está en sesión</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="background-color:#fff2cc;color:#808080">session</span><span style="color:#000000">.get(</span><span style="color:#a31515">&#x27;client_id&#x27;</span><span style="color:#000000">) </span><span style="color:#0000ff">is</span><span style="color:#000000"> </span><span style="color:#0000ff">not</span><span style="color:#000000"> </span><span style="color:#0000ff">None</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se recupera la información de la sesión</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            client_id = </span><span style="background-color:#fff2cc;color:#808080">session</span><span style="color:#000000">.get(</span><span style="color:#a31515">&#x27;client_id&#x27;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            admindata = </span><span style="color:#2b91af">AdminData</span><span style="color:#000000">().fromdict(</span><span style="background-color:#fff2cc;color:#808080">session</span><span style="color:#000000">.get(</span><span style="color:#a31515">&#x27;admindata&#x27;</span><span style="color:#000000">))</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># registro</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            logger.write(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[index_controller]</span><span style="color:#a31515"> client </span><span style="font-weight:bold;color:#a31515">[{client_id}]</span><span style="color:#a31515">, données fiscales prises en session\n&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># recuperación de los datos de la administración tributaria</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            admindata = </span><span style="color:#808080">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;layers&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;dao&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">.get_admindata()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># Inicio de sesión de admindata</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="background-color:#fff2cc;color:#808080">session</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;admindata&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = admindata.asdict()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se le asigna un número al cliente y se registra ese número en la sesión</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># esto nos permitirá rastrearlo en los registros del servidor</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            client_id = </span><span style="color:#6f008a">os</span><span style="color:#000000">.urandom(12).hex()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="background-color:#fff2cc;color:#808080">session</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;client_id&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = client_id</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># registro</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            logger.write(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[index_controller]</span><span style="color:#a31515"> client </span><span style="font-weight:bold;color:#a31515">[{client_id}]</span><span style="color:#a31515">, données fiscales prises dans la couche dao\n&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># cálculo del impuesto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        taxpayer = </span><span style="color:#2b91af">TaxPayer</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&#x27;marié&#x27;</span><span style="color:#000000">: marié, </span><span style="color:#a31515">&#x27;enfants&#x27;</span><span style="color:#000000">: enfants, </span><span style="color:#a31515">&#x27;salaire&#x27;</span><span style="color:#000000">: salaire})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;layers&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;métier&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">.calculate_tax(taxpayer, admindata)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># le enviamos la respuesta al cliente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span><span style="color:#a31515">&quot;réponse&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;result&quot;</span><span style="color:#000000">: taxpayer.asdict()}}, status.HTTP_200_OK</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">except</span><span style="color:#000000"> (</span><span style="color:#2b91af">BaseException</span><span style="color:#000000">, </span><span style="color:#2b91af">ImpôtsError</span><span style="color:#000000">) </span><span style="color:#0000ff">as</span><span style="color:#000000"> erreur:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se le entrega la respuesta al cliente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span><span style="color:#a31515">&quot;réponse&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;erreurs&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">f&quot;{erreur}&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}}, status.HTTP_500_INTERNAL_SERVER_ERROR</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 14: el controlador recibe la sesión actual del cliente web;
+  </li>
+  <li>líneas 35-38: si el cliente tiene una sesión, esta contiene dos claves:
+    <ul>
+      <li><b>[client_id]</b>: un número de cliente (línea 37);
+      </li>
+      <li><b>[admindata]</b>: los datos de la administración tributaria en forma de diccionario (línea 38);
+      </li>
+    </ul>
+  </li>
+  <li>línea 35: se verifica si la sesión contiene alguna de las dos claves esperadas;
+  </li>
+  <li>líneas 42-51: caso en el que la sesión del cliente aún no se ha inicializado;
+    <ul>
+      <li>línea 43: se recuperan los datos de la administración tributaria de la capa <b>[dao]</b>;
+      </li>
+      <li>línea 45: estos datos se almacenan en la sesión en forma de diccionario;
+      </li>
+      <li>línea 48: se le asigna un número aleatorio al cliente. Este número será diferente para cada cliente;
+      </li>
+      <li>línea 49: este número se guarda en la sesión;
+      </li>
+      <li>línea 51: se registra que los datos de la administración tributaria se obtuvieron a través de la capa <b>[dao]</b>. Los accesos a la capa <b>[dao] </b>suelen ser costosos. Por eso es necesario limitarlos. La idea aquí es obtener los datos fiscales una sola vez de la capa <b>[dao]</b>, guardarlos en la sesión y recuperarlos de ahí en las solicitudes posteriores del mismo cliente. Cabe recordar que esta no es la mejor solución. Dado que los datos fiscales de la administración son los mismos para todos los clientes, su lugar está en un objeto de alcance de aplicación;
+      </li>
+    </ul>
+  </li>
+  <li>líneas 35-40: caso en el que la sesión del cliente se haya inicializado durante una solicitud anterior;
+    <ul>
+      <li>línea 37: se recupera el número de cliente de la sesión;
+      </li>
+      <li>línea 38: se recuperan los datos fiscales de la administración de la sesión;
+      </li>
+      <li>línea 40: se registra que el cliente ha obtenido los datos fiscales de la administración en la sesión;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span id="toc48549202" name="toc48549202" class="odt-bookmark-anchor"></span></p>
+<h2 id="253-el-cliente-web">25.3. <span style="color: #4f81bd">El cliente web</span></h2>
+<p><img src="images/1000000000000208000001F24E91AAF1.png" width="227" height="218" style="width:6.01cm;height:5.756cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000208000001F24E91AAF1.png" /></p>
+<p><span id="toc48549203" name="toc48549203" class="odt-bookmark-anchor"></span></p>
+<h3 id="2531-la-capa-dao">25.3.1. <span style="color: #4f81bd"><strong>La capa</strong> [dao]</span></h3>
+<h4 id="25311-la-clase-impotsdaowithhttpsession">25.3.1.1. <span style="color: #4f81bd"><strong>La clase</strong> [ImpôtsDaoWithHttpSession]</span></h4>
+<p>La capa <strong>[dao]</strong> está implementada por la siguiente clase <strong>[ImpôtsDaoWithHttpSession]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># importaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">requests</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">flask_api</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> status</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">myutils</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> decode_flask_session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">AbstractImpôtsDao</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">AbstractImpôtsDao</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">AdminData</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">AdminData</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">ImpôtsError</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">InterfaceImpôtsMétier</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">InterfaceImpôtsMétier</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">TaxPayer</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">TaxPayer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsDaoWithHttpSession</span><span style="color:#000000">(</span><span style="color:#2b91af">AbstractImpôtsDao</span><span style="color:#000000">, </span><span style="color:#2b91af">InterfaceImpôtsMétier</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># constructor</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> __init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">config</span><span style="color:#000000">: </span><span style="color:#2b91af">dict</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># inicialización del elemento principal</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#2b91af">AbstractImpôtsDao</span><span style="color:#000000">.__init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">config</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># almacenamiento de los elementos de configuración</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># configuración general</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__config = </span><span style="color:#808080">config</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># servidor</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server = </span><span style="color:#808080">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;server&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># modo de depuración</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__debug = </span><span style="color:#808080">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;debug&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># registrador</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__logger = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># cookies</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#808080">self</span><span style="background-color:#fff2cc;color:#000000">.__cookies</span><span style="color:#000000"> = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># método no utilizado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> get_admindata(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">AdminData</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># cálculo del impuesto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> calculate_tax(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">taxpayer</span><span style="color:#000000">: </span><span style="color:#2b91af">TaxPayer</span><span style="color:#000000">, </span><span style="color:#808080">admindata</span><span style="color:#000000">: </span><span style="color:#2b91af">AdminData</span><span style="color:#000000"> = </span><span style="color:#0000ff">None</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se permite que las excepciones se propaguen</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># parámetros de la llamada GET</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        params = {</span><span style="color:#a31515">&quot;marié&quot;</span><span style="color:#000000">: </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.marié, </span><span style="color:#a31515">&quot;enfants&quot;</span><span style="color:#000000">: </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.enfants, </span><span style="color:#a31515">&quot;salaire&quot;</span><span style="color:#000000">: </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.salaire}</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># ¿Conexión con autenticación Auth Basic?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;authBasic&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            response = </span><span style="color:#6f008a">requests</span><span style="color:#000000">.get(</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000"># URL del servidor consultado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;urlServer&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000"># parámetros del URL</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                params=params,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000"># autenticación Basic</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                auth=(</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;login&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;password&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="background-color:#fff2cc;color:#000000">cookies</span><span style="color:#000000">=</span><span style="color:#808080">self</span><span style="color:#000000">.__cookies)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># conexión sin autenticación Basic</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            response = </span><span style="color:#6f008a">requests</span><span style="color:#000000">.get(</span><span style="color:#808080">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;urlServer&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, params=params, </span><span style="background-color:#fff2cc;color:#000000">cookies</span><span style="color:#000000">=</span><span style="color:#808080">self</span><span style="color:#000000">.__cookies)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se recuperan las cookies de la respuesta, si las hay</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> response.cookies:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="background-color:#fff2cc;color:#808080">self</span><span style="background-color:#fff2cc;color:#000000">.__cookies</span><span style="color:#000000"> = response.cookies</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se recupera la cookie de sesión</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            session_cookie = response.cookies.get(</span><span style="color:#a31515">&#x27;session&#x27;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se decodifica para iniciar sesión</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">if</span><span style="color:#000000"> session_cookie:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000"># programa de inicio de sesión</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#0000ff">not</span><span style="color:#000000"> </span><span style="color:#808080">self</span><span style="color:#000000">.__logger:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#808080">self</span><span style="color:#000000">.__logger = </span><span style="color:#808080">self</span><span style="color:#000000">.__config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;logger&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000"># se registra</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#808080">self</span><span style="color:#000000">.__logger.write(</span><span style="color:#a31515">f&quot;cookie de session={decode_flask_session(session_cookie)}\n&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># ¿modo de depuración?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">self</span><span style="color:#000000">.__debug:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># registrador</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#0000ff">not</span><span style="color:#000000"> </span><span style="color:#808080">self</span><span style="color:#000000">.__logger:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#808080">self</span><span style="color:#000000">.__logger = </span><span style="color:#808080">self</span><span style="color:#000000">.__config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;logger&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se registra</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.__logger.write(</span><span style="color:#a31515">f&quot;{response.text}\n&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># código de estado de la respuesta HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        status_code = response.status_code</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se guarda la respuesta jSON en un diccionario</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        résultat = response.json()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># error si el código de estado es distinto de 200 OK</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> status_code != status.HTTP_200_OK:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se sabe que los errores se han asociado a la clave [erreurs] de la respuesta</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">raise</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span><span style="color:#000000">(87, résultat</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;réponse&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;erreurs&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se sabe que el resultado se ha asociado a la clave [result] de la respuesta</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se modifica el parámetro de entrada con este resultado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.fromdict(résultat</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;réponse&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;result&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 30: la capa <b>[dao] </b>administrará un diccionario de cookies;
+  </li>
+  <li>línea 58: la propiedad <b>[response.cookies] </b>es un diccionario que reúne las cookies enviadas por el servidor en los encabezados HTTP y <b>[Set-Cookie]</b>;
+  </li>
+  <li>línea 59: estas cookies se almacenan en la capa <b>[dao]</b>. Se reenviarán al servidor en las solicitudes posteriores del mismo cliente;
+  </li>
+  <li>líneas 60-68: aunque no es imprescindible, se recupera la cookie de sesión. En el diccionario de cookies enviadas por el servidor, la cookie de sesión está asociada a la clave <b>[session]</b>;
+  </li>
+  <li>líneas 62-68: se decodifica la cookie de sesión para iniciar sesión;
+  </li>
+  <li>línea 68: más adelante volveremos a la función <b>[decode_flask_session], </b>que decodifica la cookie de sesión;
+  </li>
+  <li>líneas 52 y 57: con cada solicitud del mismo cliente, se le devuelven las cookies enviadas por el servidor. De esta manera se mantiene la sesión de Flask entre el cliente y el servidor;
+  </li>
+</ul>
+
+<p>Ahora hay que recordar que la capa <strong>[dao]</strong> se ejecutará simultáneamente en varios hilos. Por lo tanto, hay que revisar todas las propiedades de la instancia de clase y verificar si el acceso simultáneo a estas propiedades plantea algún problema. Aquí hemos agregado la propiedad <strong>[self.__cookies]</strong>, en la línea 30. Esta propiedad se modifica en la línea 59. Por lo tanto, tenemos un acceso de escritura a un dato compartido por todos los hilos. Sin embargo, este acceso plantea un problema: cada hilo que representa a un cliente específico tiene su propia cookie de sesión. De hecho, en su interior hay un número de cliente (=hilo) único para cada cliente. Si no se hace nada, el hilo T2 puede sobrescribir las cookies del hilo T1.</p>
+<p>Ya hemos visto un método para manejar este problema: se pueden crear, en el archivo <strong>[config]</strong> pasado como parámetro al constructor (línea 17), claves diferentes para cada hilo. Por ejemplo, se puede utilizar como clave el nombre del hilo:</p>
+<ul>
+  <li>en la línea 59, se podría escribir:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">config<span style="font-weight:bold">[thread_name][‘cookies’]</span>=cookies</span></span>
+</code></pre></div>
+
+<ul>
+  <li>en la línea 52, se podría escribir entonces:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">cookies=config<span style="font-weight:bold">[thread_name][‘cookies’]</span></span></span>
+</code></pre></div>
+
+<p>Aquí vamos a utilizar una técnica diferente: cada hilo (=cliente) tendrá su propia capa <strong>[dao]</strong>. De esta manera, la línea 59 ya no presenta ningún problema, ya que las cookies utilizadas son las de un único cliente.</p>
+<p>Para ello, crearemos una nueva clase <strong>[ImpôtsDaoWithHttpSessionFactory]</strong>.</p>
+<h4 id="25312-la-funcion-de-decodificacion-de-la-sesion-de-flask">25.3.1.2. <span style="color: #4f81bd">La función de decodificación de la sesión de Flask</span></h4>
+<p>La función <strong>[decode_flask_session]</strong> se define en el script <strong>[myutils]</strong>:</p>
+<p><img src="images/1000000000000146000001109F11451C.png" width="142" height="119" style="width:3.761cm;height:3.138cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000146000001109F11451C.png" /></p>
+<p>Ya hemos estudiado el script |myutils|. Este script es un módulo de alcance de máquina que los distintos scripts de este curso pueden importar con la instrucción:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">myutils</span>
+</code></pre></div>
+<p>En él se define la función <strong>[decode_flask_session]</strong> de la siguiente manera:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span> decode_flask_session(<span style="color:#808080">cookie</span>: <span style="color:#2b91af">str</span>) -&gt; <span style="color:#2b91af">str</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # fuente: https://www.kirsle.net/wizards/flask-session.cgi</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    compressed = <span style="color:#0000ff">False</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    payload = <span style="color:#808080">cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> payload.startswith(<span style="color:#a31515">&#x27;.&#x27;</span>):</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        compressed = <span style="color:#0000ff">True</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        payload = payload<span style="font-weight:bold">[1:]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    data = payload.split(<span style="color:#a31515">&quot;.&quot;</span>)<span style="font-weight:bold">[0]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    data = base64_decode(data)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> compressed:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        data = <span style="color:#6f008a">zlib</span>.decompress(data)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> data.decode(<span style="color:#a31515">&quot;utf-8&quot;</span>)</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 2: el URL donde encontré esta función;
+  </li>
+  <li>línea 1: el parámetro <b>[cookie] </b>es la cadena de caracteres asociada a la clave <b>[session] </b>en el diccionario de cookies recibidas por un cliente web;
+  </li>
+  <li>líneas 3-16: no voy a comentar este código, ya que no lo domino;
+  </li>
+</ul>
+
+<p>Se agrega una nueva importación al archivo <strong>[__init__.py]</strong>:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> .<span style="color:#6f008a">myutils</span> <span style="color:#0000ff">import</span> set_syspath, json_response, <span style="background-color:#fff2cc">decode_flask_session</span></span></span>
+</code></pre></div>
+
+<p>La nueva versión de <strong>[myutils]</strong> se instala entre los módulos de ámbito de máquina con el comando <strong>[pip install .]</strong> en un terminal de PyCharm:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 3144;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content">(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\<span style="background-color:#fff2cc">packages</span>&gt;<span style="background-color:#fff2cc">pip install .</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Processing c:\data\st-2020\dev\python\cours-2020\python3-flask-2020\packages</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Using legacy setup.py install for myutils, since package &#x27;wheel&#x27; is not installed.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Installing collected packages: myutils</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  Attempting uninstall: myutils</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Found existing installation: myutils 0.1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Uninstalling myutils-0.1:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Successfully uninstalled myutils-0.1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Running setup.py install for myutils ... done</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Successfully installed myutils-0.1</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 1: hay que estar en la carpeta <b>[packages] </b>para escribir esta instrucción;
+  </li>
+</ul>
+
+<h4 id="25313-la-clase-impotsdaowithhttpsessionfactory">25.3.1.3. <span style="color: #4f81bd"><strong>La clase</strong> [ImpôtsDaoWithHttpSessionFactory]</span></h4>
+<p>La clase <strong>[ImpôtsDaoWithHttpSessionFactory]</strong> es la siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span>ImpôtsDaoWithHttpSession<span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsDaoWithHttpSession</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsDaoWithHttpSessionFactory</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> __init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">config</span><span style="color:#000000">: </span><span style="color:#2b91af">dict</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se almacena el parámetro</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__config = </span><span style="color:#808080">config</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> new_instance(</span><span style="color:#808080">self</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se devuelve una instancia de la capa [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsDaoWithHttpSession</span><span style="color:#000000">(</span><span style="color:#808080">self</span><span style="color:#000000">.__config)</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>La clase <b>[ImpôtsDaoWithHttpSessionFactory] </b>permite crear una nueva implementación de la capa <b>[dao] </b>con el método <b>[new_instance] </b>de las líneas 10 a 12;
+  </li>
+</ul>
+
+<p><span id="toc48549204" name="toc48549204" class="odt-bookmark-anchor"></span></p>
+<h3 id="2532-la-configuracion">25.3.2. <span style="color: #4f81bd">La configuración</span></h3>
+<p>El script <strong>[config_layers],</strong> que configura las capas del cliente web, se modifica de la siguiente manera:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span> configure(<span style="color:#808080">config</span>: <span style="color:#2b91af">dict</span>) -&gt; <span style="color:#2b91af">dict</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # instanciación de las capas de la aplicación</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # capa DAO</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">from</span> <span style="color:#6f008a">ImpôtsDaoWithHttpSessionFactory</span> <span style="color:#0000ff">import</span> <span style="color:#2b91af">ImpôtsDaoWithHttpSessionFactory</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    dao_factory = <span style="color:#2b91af">ImpôtsDaoWithHttpSessionFactory</span>(<span style="color:#808080">config</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # se realiza la configuración de las capas</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;dao_factory&quot;</span>: dao_factory</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+</code></pre></div>
+
+<ul>
+  <li>líneas 5-6: en lugar de instanciar una sola capa <b>[dao] </b>como se hacía anteriormente, se instancia una «fábrica» de esta capa (fábrica = fábrica de producción de objetos, en este caso la capa <b>[dao]</b>);
+  </li>
+  <li>líneas 9-11: se devuelve la configuración de las capas;
+  </li>
+</ul>
+
+<p><span id="toc48549205" name="toc48549205" class="odt-bookmark-anchor"></span></p>
+<h3 id="2533-el-script-principal-del-cliente">25.3.3. <span style="color: #4f81bd">El script principal del cliente</span></h3>
+<p>El script <strong>[main]</strong> presenta los siguientes cambios con respecto al de la versión anterior:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># se configura la aplicación</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">config</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#6f008a">config</span><span style="color:#000000"> = </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure({})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># dependencias</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">ImpôtsError</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">random</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">sys</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">threading</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">Logger</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> Logger</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ejecución de la capa [dao] en un hilo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># «taxpayers» es una lista de contribuyentes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> thread_function(</span><span style="color:#808080">thread_dao</span><span style="color:#000000">, </span><span style="color:#808080">logger</span><span style="color:#000000">, </span><span style="color:#808080">taxpayers</span><span style="color:#000000">: </span><span style="color:#2b91af">list</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># lista de subprocesos del cliente</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">threads = </span><span style="font-weight:bold;color:#000000">[]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">logger = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># código</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    l_taxpayers = len(taxpayers)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">while</span><span style="color:#000000"> i &lt; len(taxpayers):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span>…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># cada hilo debe tener su propia capa [dao] para gestionar correctamente su cookie de sesión</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#000000">thread_dao = dao_factory.new_instance()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se crea el hilo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        thread = </span><span style="color:#6f008a">threading</span><span style="color:#000000">.</span><span style="color:#2b91af">Thread</span><span style="color:#000000">(target=thread_function, args=(</span><span style="background-color:#fff2cc;color:#000000">thread_dao</span><span style="color:#000000">, logger, thread_taxpayers))</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se agrega a la lista de subprocesos del script principal</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        threads.append(thread)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se inicia el hilo —esta operación es asíncrona—; no se espera el resultado del hilo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        thread.start()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># el hilo principal espera a que finalicen todos los hilos que ha iniciado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">…</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">except</span><span style="color:#000000"> </span><span style="color:#2b91af">BaseException</span><span style="color:#000000"> </span><span style="color:#0000ff">as</span><span style="color:#000000"> erreur:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se muestra el error</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;L&#x27;erreur suivante s&#x27;est produite : {erreur}&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se cierra el registrador</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> logger:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        logger.close()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se ha terminado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Travail terminé...&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># fin de los subprocesos que aún podrían existir si se detuvo por un error</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#6f008a">sys</span><span style="color:#000000">.exit()</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>líneas 29-30: cada hilo tiene su propia capa <b>[dao]</b>;
+  </li>
+</ul>
+
+<p><span id="toc48549206" name="toc48549206" class="odt-bookmark-anchor"></span></p>
+<h3 id="2534-ejecucion-del-cliente">25.3.4. <span style="color: #4f81bd">Ejecución del cliente</span></h3>
+<p>Se inicia el servidor web, se inicia el SGBD y se inicia el servidor de correo <strong>[hMailServer]</strong>. Luego se inicia el script <strong>[main]</strong> del cliente web. Los registros de ejecución en <strong>[data/logs/logs.txt]</strong> son los siguientes:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.478511, Thread-1 : début du thread <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">Thread-1</span><span style="font-weight:bold">]</span> avec 1 contribuable(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.479111, Thread-1 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 1, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 55555}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.479111, Thread-2 : début du thread <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">Thread-2</span><span style="font-weight:bold">]</span> avec 1 contribuable(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.480195, Thread-3 : début du thread <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">Thread-3</span><span style="font-weight:bold">]</span> avec 2 contribuable(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.480195, Thread-2 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 2, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 50000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.481137, Thread-4 : début du thread <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">Thread-4</span><span style="font-weight:bold">]</span> avec <span style="background-color:#fff2cc">3</span> contribuable(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.481137, Thread-3 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 3, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 50000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.482279, Thread-5 : début du thread <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">Thread-5</span><span style="font-weight:bold">]</span> avec 3 contribuable(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.482622, Thread-6 : début du thread <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">Thread-6</span><span style="font-weight:bold">]</span> avec 1 contribuable(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.482622, <span style="background-color:#fff2cc">Thread-4</span> : début du calcul de l&#x27;impôt de {&quot;id&quot;: 5, &quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.485923, Thread-5 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 8, &quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 100000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.485923, Thread-6 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 11, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.725910, <span style="background-color:#fff2cc">Thread-4</span> : cookie de session={&quot;<span style="background-color:#fff2cc">admindata</span>&quot;:{&quot;abattement_dixpourcent_max&quot;:12502.0,&quot;abattement_dixpourcent_min&quot;:437.0,&quot;coeffn&quot;:<span style="font-weight:bold">[0.0,1394.96,5798.0,13913.7,20163.4]</span>,&quot;coeffr&quot;:<span style="font-weight:bold">[0.0,0.14,0.3,0.41,0.45]</span>,&quot;id&quot;:1,&quot;limites&quot;:<span style="font-weight:bold">[9964.0,27519.0,73779.0,156244.0,90000.0]</span>,&quot;plafond_decote_celibataire&quot;:1196.0,&quot;plafond_decote_couple&quot;:1970.0,&quot;plafond_impot_celibataire_pour_decote&quot;:1595.0,&quot;plafond_impot_couple_pour_decote&quot;:2627.0,&quot;plafond_qf_demi_part&quot;:1551.0,&quot;plafond_revenus_celibataire_pour_reduction&quot;:21037.0,&quot;plafond_revenus_couple_pour_reduction&quot;:42074.0,&quot;valeur_reduc_demi_part&quot;:3797.0},&quot;client_id&quot;:&quot;<span style="background-color:#fff2cc">fa3c83b82761c83e13217967</span>&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.725910, <span style="background-color:#fff2cc">Thread-4</span> : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 16782, &quot;surcôte&quot;: 7176, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.725910, <span style="background-color:#fff2cc">Thread-4</span> : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 5, &quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 16782, &quot;surcôte&quot;: 7176, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.726960, <span style="background-color:#fff2cc">Thread-4</span> : début du calcul de l&#x27;impôt de {&quot;id&quot;: 6, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.514108, Thread-3 : cookie de session={&quot;admindata&quot;:{&quot;abattement_dixpourcent_max&quot;:12502.0,&quot;abattement_dixpourcent_min&quot;:437.0,&quot;coeffn&quot;:<span style="font-weight:bold">[0.0,1394.96,5798.0,13913.7,20163.4]</span>,&quot;coeffr&quot;:<span style="font-weight:bold">[0.0,0.14,0.3,0.41,0.45]</span>,&quot;id&quot;:1,&quot;limites&quot;:<span style="font-weight:bold">[9964.0,27519.0,73779.0,156244.0,24999.5]</span>,&quot;plafond_decote_celibataire&quot;:1196.0,&quot;plafond_decote_couple&quot;:1970.0,&quot;plafond_impot_celibataire_pour_decote&quot;:1595.0,&quot;plafond_impot_couple_pour_decote&quot;:2627.0,&quot;plafond_qf_demi_part&quot;:1551.0,&quot;plafond_revenus_celibataire_pour_reduction&quot;:21037.0,&quot;plafond_revenus_couple_pour_reduction&quot;:42074.0,&quot;valeur_reduc_demi_part&quot;:3797.0},&quot;client_id&quot;:&quot;700e3f5dc808c7c48f0c9007&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.514610, Thread-3 : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 720, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.514939, Thread-3 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 3, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 720, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.514939, Thread-3 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 4, &quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 100000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.527211, Thread-5 : cookie de session={&quot;admindata&quot;:{&quot;abattement_dixpourcent_max&quot;:12502.0,&quot;abattement_dixpourcent_min&quot;:437.0,&quot;coeffn&quot;:<span style="font-weight:bold">[0.0,1394.96,5798.0,13913.7,20163.4]</span>,&quot;coeffr&quot;:<span style="font-weight:bold">[0.0,0.14,0.3,0.41,0.45]</span>,&quot;id&quot;:1,&quot;limites&quot;:<span style="font-weight:bold">[9964.0,27519.0,73779.0,156244.0,90000.0]</span>,&quot;plafond_decote_celibataire&quot;:1196.0,&quot;plafond_decote_couple&quot;:1970.0,&quot;plafond_impot_celibataire_pour_decote&quot;:1595.0,&quot;plafond_impot_couple_pour_decote&quot;:2627.0,&quot;plafond_qf_demi_part&quot;:1551.0,&quot;plafond_revenus_celibataire_pour_reduction&quot;:21037.0,&quot;plafond_revenus_couple_pour_reduction&quot;:42074.0,&quot;valeur_reduc_demi_part&quot;:3797.0},&quot;client_id&quot;:&quot;9e14a5d4a3057f69ab95ab2d&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.527211, Thread-2 : cookie de session={&quot;admindata&quot;:{&quot;abattement_dixpourcent_max&quot;:12502.0,&quot;abattement_dixpourcent_min&quot;:437.0,&quot;coeffn&quot;:<span style="font-weight:bold">[0.0,1394.96,5798.0,13913.7,20163.4]</span>,&quot;coeffr&quot;:<span style="font-weight:bold">[0.0,0.14,0.3,0.41,0.45]</span>,&quot;id&quot;:1,&quot;limites&quot;:<span style="font-weight:bold">[9964.0,27519.0,73779.0,156244.0,22500.0]</span>,&quot;plafond_decote_celibataire&quot;:1196.0,&quot;plafond_decote_couple&quot;:1970.0,&quot;plafond_impot_celibataire_pour_decote&quot;:1595.0,&quot;plafond_impot_couple_pour_decote&quot;:2627.0,&quot;plafond_qf_demi_part&quot;:1551.0,&quot;plafond_revenus_celibataire_pour_reduction&quot;:21037.0,&quot;plafond_revenus_couple_pour_reduction&quot;:42074.0,&quot;valeur_reduc_demi_part&quot;:3797.0},&quot;client_id&quot;:&quot;a06e8fd70a44c9e311f4dce0&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.527211, Thread-5 : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 22986, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.527211, Thread-1 : cookie de session={&quot;admindata&quot;:{&quot;abattement_dixpourcent_max&quot;:12502.0,&quot;abattement_dixpourcent_min&quot;:437.0,&quot;coeffn&quot;:<span style="font-weight:bold">[0.0,1394.96,5798.0,13913.7,20163.4]</span>,&quot;coeffr&quot;:<span style="font-weight:bold">[0.0,0.14,0.3,0.41,0.45]</span>,&quot;id&quot;:1,&quot;limites&quot;:<span style="font-weight:bold">[9964.0,27519.0,73779.0,156244.0,90000.0]</span>,&quot;plafond_decote_celibataire&quot;:1196.0,&quot;plafond_decote_couple&quot;:1970.0,&quot;plafond_impot_celibataire_pour_decote&quot;:1595.0,&quot;plafond_impot_couple_pour_decote&quot;:2627.0,&quot;plafond_qf_demi_part&quot;:1551.0,&quot;plafond_revenus_celibataire_pour_reduction&quot;:21037.0,&quot;plafond_revenus_couple_pour_reduction&quot;:42074.0,&quot;valeur_reduc_demi_part&quot;:3797.0},&quot;client_id&quot;:&quot;28c38df998f67685b3a482b8&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.527211, Thread-2 : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 1384, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 384, &quot;réduction&quot;: 347}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.528341, Thread-5 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 8, &quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 22986, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.528341, Thread-1 : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 55555, &quot;impôt&quot;: 2814, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.528842, Thread-2 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 2, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 1384, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 384, &quot;réduction&quot;: 347}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.529349, Thread-5 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 9, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 30000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.529699, Thread-1 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 1, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 55555, &quot;impôt&quot;: 2814, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.529699, Thread-2 : fin du thread <span style="font-weight:bold">[Thread-2]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.531905, Thread-1 : fin du thread <span style="font-weight:bold">[Thread-1]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.536121, Thread-6 : cookie de session={&quot;admindata&quot;:{&quot;abattement_dixpourcent_max&quot;:12502.0,&quot;abattement_dixpourcent_min&quot;:437.0,&quot;coeffn&quot;:<span style="font-weight:bold">[0.0,1394.96,5798.0,13913.7,20163.4]</span>,&quot;coeffr&quot;:<span style="font-weight:bold">[0.0,0.14,0.3,0.41,0.45]</span>,&quot;id&quot;:1,&quot;limites&quot;:<span style="font-weight:bold">[9964.0,27519.0,73779.0,156244.0,93749.0]</span>,&quot;plafond_decote_celibataire&quot;:1196.0,&quot;plafond_decote_couple&quot;:1970.0,&quot;plafond_impot_celibataire_pour_decote&quot;:1595.0,&quot;plafond_impot_couple_pour_decote&quot;:2627.0,&quot;plafond_qf_demi_part&quot;:1551.0,&quot;plafond_revenus_celibataire_pour_reduction&quot;:21037.0,&quot;plafond_revenus_couple_pour_reduction&quot;:42074.0,&quot;valeur_reduc_demi_part&quot;:3797.0},&quot;client_id&quot;:&quot;38499b63076516c02f2770ec&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.537161, Thread-3 : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 19884, &quot;surcôte&quot;: 4480, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.537161, Thread-6 : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.538156, Thread-3 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 4, &quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 19884, &quot;surcôte&quot;: 4480, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.538557, Thread-6 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 11, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.538828, Thread-3 : fin du thread <span style="font-weight:bold">[Thread-3]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.538828, Thread-6 : fin du thread <span style="font-weight:bold">[Thread-6]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.546198, Thread-5 : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 30000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.0, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.546198, Thread-5 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 9, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 30000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.0, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.546198, Thread-5 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 10, &quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 200000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.739643, <span style="background-color:#fff2cc">Thread-4</span> : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 9200, &quot;surcôte&quot;: 2180, &quot;taux&quot;: 0.3, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.739643, <span style="background-color:#fff2cc">Thread-4</span> : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 6, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 9200, &quot;surcôte&quot;: 2180, &quot;taux&quot;: 0.3, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.740668, <span style="background-color:#fff2cc">Thread-4</span> : début du calcul de l&#x27;impôt de {&quot;id&quot;: 7, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 5, &quot;salaire&quot;: 100000}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.557469, Thread-5 : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 64210, &quot;surcôte&quot;: 7498, &quot;taux&quot;: 0.45, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.558715, Thread-5 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 10, &quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 64210, &quot;surcôte&quot;: 7498, &quot;taux&quot;: 0.45, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.558715, Thread-5 : fin du thread <span style="font-weight:bold">[Thread-5]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.753025, <span style="background-color:#fff2cc">Thread-4</span> : {&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 5, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 4230, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.753318, <span style="background-color:#fff2cc">Thread-4</span> : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 7, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 5, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 4230, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.753540, <span style="background-color:#fff2cc">Thread-4</span> : fin du thread <span style="font-weight:bold">[Thread-4]</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>Hay un total de 6 subprocesos, es decir, 6 clientes (líneas 1, 3, 4, 6, 8, 9) que consultan simultáneamente al servidor de cálculo de impuestos;
+  </li>
+  <li>vamos a seguir el hilo <b>[Thread-4], </b>que gestiona a 3 contribuyentes (línea 6). Este hilo realizará secuencialmente tres solicitudes al servidor de cálculo de impuestos;
+  </li>
+  <li>línea 10: la primera solicitud de <b>[Thread-4]</b>;
+  </li>
+  <li>línea 13: <b>[Thread-4] </b>recibió la respuesta a su primera solicitud. En ella encuentra una cookie de sesión que contiene el número <b>[fa3c83b82761c83e13217967] </b>que le asignó el servidor;
+  </li>
+  <li>línea 14: el impuesto del primer contribuyente;
+  </li>
+  <li>línea 16: <b>[Thread-4] </b>realiza una solicitud para el segundo contribuyente;
+  </li>
+  <li>línea 43: <b>[Thread-4] </b>recibe el impuesto del segundo contribuyente;
+  </li>
+  <li>línea 45: <b>[Thread-4] </b>realiza una consulta para el tercer contribuyente;
+  </li>
+  <li>línea 49: <b>[Thread-4] </b>recibe el impuesto del tercer contribuyente;
+  </li>
+  <li>línea 51: <b>[Thread-4] </b>ha terminado su trabajo;
+  </li>
+</ul>
+
+<p>Ahora veamos cómo se procesaron las tres solicitudes de <strong>[Thread-4]</strong> en el servidor. Podremos seguirlo en los registros del servidor gracias a su número de cliente <strong>[fa3c83b82761c83e13217967]</strong>.</p>
+<p>Los registros de <strong>[data/logs/logs.txt]</strong> en el servidor son los siguientes:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:39.187366, MainThread : <span style="font-weight:bold">[serveur]</span> démarrage du serveur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:40.439093, MainThread : <span style="font-weight:bold">[serveur]</span> démarrage du serveur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.502011, Thread-2 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=sí&amp;hijos=3&amp;salario=50000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.504049, Thread-2 : <span style="font-weight:bold">[index]</span> mis en pause du thread pendant 1 seconde(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.505452, Thread-3 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=sí&amp;hijos=2&amp;salario=55555&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.506257, Thread-3 : <span style="font-weight:bold">[index]</span> mis en pause du thread pendant 1 seconde(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.507292, Thread-4 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=no&amp;hijos=0&amp;salario=100000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.507292, Thread-4 : <span style="font-weight:bold">[index]</span> mis en pause du thread pendant 1 seconde(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.508301, Thread-5 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=sí&amp;hijos=2&amp;salario=50000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.509293, Thread-5 : <span style="font-weight:bold">[index]</span> mis en pause du thread pendant 1 seconde(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.511808, Thread-6 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=no&amp;hijos=3&amp;salario=100000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.517604, Thread-7 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=sí&amp;hijos=3&amp;salario=200000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.517604, Thread-7 : <span style="font-weight:bold">[index]</span> mis en pause du thread pendant 1 seconde(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.719504, Thread-6 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">fa3c83b82761c83e13217967</span><span style="font-weight:bold">]</span>, données fiscales prises dans <span style="background-color:#fff2cc">la couche dao</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.720003, Thread-6 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;non&#x27;, &#x27;enfants&#x27;: 3, &#x27;salaire&#x27;: 100000, &#x27;impôt&#x27;: 16782, &#x27;surcôte&#x27;: 7176, &#x27;taux&#x27;: 0.41, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.736108, Thread-8 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=sí&amp;hijos=3&amp;salario=100000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:46.736108, Thread-8 : <span style="font-weight:bold">[index]</span> mis en pause du thread pendant 1 seconde(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.506709, Thread-2 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[700e3f5dc808c7c48f0c9007]</span>, données fiscales prises dans la couche dao</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.507216, Thread-2 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: 3, &#x27;salaire&#x27;: 50000, &#x27;impôt&#x27;: 0, &#x27;surcôte&#x27;: 0, &#x27;taux&#x27;: 0.14, &#x27;décôte&#x27;: 720, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.507216, Thread-3 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[28c38df998f67685b3a482b8]</span>, données fiscales prises dans la couche dao</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.508442, Thread-4 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[9e14a5d4a3057f69ab95ab2d]</span>, données fiscales prises dans la couche dao</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.508940, Thread-3 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: 2, &#x27;salaire&#x27;: 55555, &#x27;impôt&#x27;: 2814, &#x27;surcôte&#x27;: 0, &#x27;taux&#x27;: 0.14, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.510506, Thread-4 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;non&#x27;, &#x27;enfants&#x27;: 0, &#x27;salaire&#x27;: 100000, &#x27;impôt&#x27;: 22986, &#x27;surcôte&#x27;: 0, &#x27;taux&#x27;: 0.41, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.511513, Thread-5 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[a06e8fd70a44c9e311f4dce0]</span>, données fiscales prises dans la couche dao</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.514939, Thread-5 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: 2, &#x27;salaire&#x27;: 50000, &#x27;impôt&#x27;: 1384, &#x27;surcôte&#x27;: 0, &#x27;taux&#x27;: 0.14, &#x27;décôte&#x27;: 384, &#x27;réduction&#x27;: 347}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.520727, Thread-7 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[38499b63076516c02f2770ec]</span>, données fiscales prises dans la couche dao</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.523162, Thread-7 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: 3, &#x27;salaire&#x27;: 200000, &#x27;impôt&#x27;: 42842, &#x27;surcôte&#x27;: 17283, &#x27;taux&#x27;: 0.41, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.530835, Thread-9 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=no&amp;hijos=2&amp;salario=100000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.531736, Thread-9 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[700e3f5dc808c7c48f0c9007]</span>, données fiscales prises en session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.531905, Thread-9 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;non&#x27;, &#x27;enfants&#x27;: 2, &#x27;salaire&#x27;: 100000, &#x27;impôt&#x27;: 19884, &#x27;surcôte&#x27;: 4480, &#x27;taux&#x27;: 0.41, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.541899, Thread-10 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=sí&amp;hijos=2&amp;salario=30000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.542488, Thread-10 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[9e14a5d4a3057f69ab95ab2d]</span>, données fiscales prises en session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.542488, Thread-10 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: 2, &#x27;salaire&#x27;: 30000, &#x27;impôt&#x27;: 0, &#x27;surcôte&#x27;: 0, &#x27;taux&#x27;: 0.0, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.553628, Thread-11 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=no&amp;hijos=0&amp;salario=200000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.553628, Thread-11 : <span style="font-weight:bold">[index]</span> mis en pause du thread pendant 1 seconde(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.736910, Thread-8 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">fa3c83b82761c83e13217967</span><span style="font-weight:bold">]</span>, données fiscales prises en <span style="background-color:#fff2cc">session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.737191, Thread-8 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: 3, &#x27;salaire&#x27;: 100000, &#x27;impôt&#x27;: 9200, &#x27;surcôte&#x27;: 2180, &#x27;taux&#x27;: 0.3, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.748226, Thread-12 : [index] requête : &lt;Request &#x27;http://127.0.0.1:5000/?casado=sí&amp;hijos=5&amp;salario=100000&#x27; [GET]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:47.748226, Thread-12 : <span style="font-weight:bold">[index]</span> mis en pause du thread pendant 1 seconde(s)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.554695, Thread-11 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[9e14a5d4a3057f69ab95ab2d]</span>, données fiscales prises en session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.555070, Thread-11 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;non&#x27;, &#x27;enfants&#x27;: 0, &#x27;salaire&#x27;: 200000, &#x27;impôt&#x27;: 64210, &#x27;surcôte&#x27;: 7498, &#x27;taux&#x27;: 0.45, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.748753, Thread-12 : <span style="font-weight:bold">[index_controller]</span> client <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">fa3c83b82761c83e13217967</span><span style="font-weight:bold">]</span>, données fiscales prises en <span style="background-color:#fff2cc">session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-25 10:21:48.748753, Thread-12 : <span style="font-weight:bold">[index]</span> {&#x27;réponse&#x27;: {&#x27;result&#x27;: {&#x27;marié&#x27;: &#x27;oui&#x27;, &#x27;enfants&#x27;: 5, &#x27;salaire&#x27;: 100000, &#x27;impôt&#x27;: 4230, &#x27;surcôte&#x27;: 0, &#x27;taux&#x27;: 0.14, &#x27;décôte&#x27;: 0, &#x27;réduction&#x27;: 0}}}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>El cliente <b>[fa3c83b82761c83e13217967]</b> aparece por primera vez en la línea 14: para calcular el impuesto, el servidor tuvo que buscar en la base de datos los datos de la administración tributaria;
+  </li>
+  <li>Luego, volvemos a encontrar al cliente <b>[fa3c83b82761c83e13217967] </b>en la línea 36. En esta ocasión, el servidor encuentra los datos de la administración tributaria en la sesión, lo que le evita un acceso, posiblemente costoso, a la capa <b>[dao]</b>;
+  </li>
+  <li>encontramos al cliente <b>[fa3c83b82761c83e13217967] </b>por tercera vez en la línea 42, donde, una vez más, el servidor utiliza la sesión del cliente;
+  </li>
+</ul>
+
+<p>Este ejemplo ilustra claramente la utilidad de la sesión para un cliente: en ella se almacenan datos compartidos por todas las solicitudes de ese cliente y cuya obtención resulta costosa.</p>
+<p>Del lado del cliente, los resultados en el archivo <strong>[data/output/résultats.json]</strong> son los mismos que en las versiones anteriores.</p>
+<p><span id="toc48549207" name="toc48549207" class="odt-bookmark-anchor"></span></p>
+<h2 id="254-pruebas-de-la-capa-dao">25.4. <span style="color: #4f81bd"><strong>Pruebas de la capa</strong> [dao]</span></h2>
+<p>Al igual que en las <a href="ejercicio-practico-version-6.html#testsdela"><u><span style="color: #0563c1">|versiones</span></u></a> anteriores|, probamos la capa <strong>[dao]</strong> del cliente:</p>
+<p><img src="images/10000000000003CF000003C7638DD447.png" width="426" height="422" style="width:11.269cm;height:11.178cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003CF000003C7638DD447.png" /></p>
+<p>La clase de prueba se ejecutará en el siguiente entorno:</p>
+<p><img src="images/10000000000001AA000001F423CB28F2.png" width="186" height="218" style="width:4.911cm;height:5.764cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AA000001F423CB28F2.png" /></p>
+<ul>
+  <li>la configuración <b>[2] </b>es idéntica a la configuración <b>[1] </b>que acabamos de analizar;
+  </li>
+</ul>
+
+<p>La clase de prueba <strong>[TestHttpClientDao]</strong> es la siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span>unittest</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span>Logger<span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">Logger</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">TestHttpClientDao</span><span style="color:#000000">(</span>unittest<span style="color:#000000">.</span><span style="color:#2b91af">TestCase</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> test_1(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#0000ff">None</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>TaxPayer<span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#2b91af">TaxPayer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># {&#x27;casado&#x27;: &#x27;sí&#x27;, &#x27;hijos&#x27;: 2, &#x27;salario&#x27;: 55555,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># &#x27;impuesto&#x27;: 2814, &#x27;recargo&#x27;: 0, &#x27;descuento&#x27;: 0, &#x27;reducción&#x27;: 0, &#x27;tasa&#x27;: 0.14}</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        taxpayer = </span><span style="color:#2b91af">TaxPayer</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;marié&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;oui&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;enfants&quot;</span><span style="color:#000000">: 2, </span><span style="color:#a31515">&quot;salaire&quot;</span><span style="color:#000000">: 55555})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        dao.calculate_tax(taxpayer)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># verificación</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertAlmostEqual(taxpayer.impôt, 2815, delta=1)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(taxpayer.décôte, 0)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(taxpayer.réduction, 0)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertAlmostEqual(taxpayer.taux, 0.14, delta=0.01)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(taxpayer.surcôte, 0)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">if</span><span style="color:#000000"> __name__ == </span><span style="color:#a31515">&#x27;__main__&#x27;</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se configura la aplicación</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">import</span><span style="color:#000000"> </span>config</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>config<span style="color:#000000"> = </span>config<span style="color:#000000">.configure({})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># registrador</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    logger = </span><span style="color:#2b91af">Logger</span><span style="color:#000000">(</span>config<span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;logsFilename&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se guarda en la configuración</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>config<span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;logger&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = logger</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se recupera la fábrica de la capa [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    dao_factory = </span>config<span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;layers&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;dao_factory&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se crea una instancia de la capa [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    dao = dao_factory.new_instance()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># ejecutamos los métodos de prueba</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;tests en cours...&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>unittest<span style="color:#000000">.</span>main<span style="color:#000000">()</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>Se crea una <a href="ejercicio-practico-version-6.html#testsdela"><u><span style="color: #0563c1">|configuración de</span></u></a> ejecución| para esta prueba;
+  </li>
+  <li>iniciamos el servidor web con todo su entorno;
+  </li>
+  <li>ejecutamos la prueba;
+  </li>
+</ul>
+
+<p>Los resultados son los siguientes:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/<span style="background-color:#bdd6ee">http-clients/03/tests/TestHttpClientDao</span>.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">tests en cours...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...........</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">----------------------------------------------------------------------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee">Ran 11 tests</span> in 3.392s</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">OK</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Process finished with exit code 0</span></span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Este curso-tutorial, escrito por <strong>Serge Tahé</strong>, se pone a disposición del público de acuerdo con los términos de la
+        <em>Creative Commons Reconocimiento – Sin uso comercial –
+        Compartir igual 3.0 sin modificaciones</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

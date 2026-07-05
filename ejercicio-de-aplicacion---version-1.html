@@ -1,0 +1,2374 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ales-python-flask-sept-2020/ejercicio-de-aplicacion---version-1.html">
+      
+      
+        <link rel="prev" href="los-archivos-de-texto.html">
+      
+      
+        <link rel="next" href="las-importaciones.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>8. Ejercicio de aplicación – versión 1 - Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#8-ejercicio-de-aplicacion-version-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" class="md-header__button md-logo" aria-label="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              8. Ejercicio de aplicación – versión 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar al modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar al modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar al modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar al modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ales-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" class="md-nav__button md-logo" aria-label="Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introducción al lenguaje de programación Python 3 y al marco web Flask a través de ejemplos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ales-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prologo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Prólogo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="instalacion-de-un-entorno-de-trabajo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación de un entorno de trabajo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conceptos-basicos-de-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Conceptos básicos de Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-cadenas-de-caracteres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Las cadenas de caracteres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-excepciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Las excepciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-funciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Las funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="los-archivos-de-texto.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Los archivos de texto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Ejercicio de aplicación – versión 1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ejercicio-de-aplicacion---version-1.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Ejercicio de aplicación – versión 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-el-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. El problema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1. El problema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#811-calculo-del-impuesto-bruto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.1. Cálculo del impuesto bruto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#812-limite-maximo-del-cociente-familiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.2. Límite máximo del cociente familiar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#813-calculo-de-la-reduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.3. Cálculo de la reducción
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#814-calculo-de-la-reduccion-de-impuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.4. Cálculo de la reducción de impuestos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#815-calculo-del-impuesto-neto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.5. Cálculo del impuesto neto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#816-caso-de-los-ingresos-altos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.6. Caso de los ingresos altos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1.6. Caso de los ingresos altos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8161-limite-maximo-de-la-reduccion-del-10-sobre-los-ingresos-anuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.6.1. Límite máximo de la reducción del 10 % sobre los ingresos anuales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8162-limite-maximo-del-cociente-familiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.6.2. Límite máximo del cociente familiar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#817-cifras-oficiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.7. Cifras oficiales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-version-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Versión 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2. Versión 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821-el-script-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.1. El script principal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822-el-modulo-impotsv01sharedimpots_module_01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.2. El módulo [impots.v01.shared.impôts_module_01]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#823-la-funcion-get_taxpayers_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.3. La función [get_taxpayers_data]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#824-la-funcion-calcul_impot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.4. La función [calcul_impôt]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#825-la-funcion-calcul_impot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.5. La función [calcul_impôt_2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#826-la-funcion-get_decote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.6. La función [get_décôte]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#827-la-funcion-get_reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.7. La función [get_réduction]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#828-la-funcion-get_revenu_imposable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.8. La función [get_revenu_imposable]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#829-la-funcion-record_results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.9. La función [record_results]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8210-los-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.10. Los resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-importaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Las importaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Ejercicio práctico: versión 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Ejercicio práctico: versión 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-clases-y-los-objetos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Las clases y los objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="las-clases-genericas-baseentity-y-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Las clases genéricas [BaseEntity] y [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arquitectura-en-capas-y-programacion-por-interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Arquitectura en capas y programación por interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-de-aplicacion---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Ejercicio de aplicación - versión 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Uso de SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-sgbd-y-postgresql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Uso de SGBD y PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="escribir-codigo-independiente-de-sgbd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Escribir código independiente de SGBD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uso-de-orm-sqlalchemy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Uso de ORM SQLALCHEMY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Ejercicio práctico: versión 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="funciones-de-internet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Funciones de Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="servicios-web-con-el-marco-flask.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Servicios web con el marco Flask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Ejercicio práctico: versión 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Ejercicio práctico: versión 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-ejercicio-practico-version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Ejercicio práctico: versión 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="del-diccionario-a-xml-y-viceversa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Del diccionario a XML y viceversa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Ejercicio práctico: versión 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Ejercicio práctico: versión 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Ejercicio práctico: versión 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Ejercicio práctico: versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clientes-web-para-los-servicios-json-y-xml-de-la-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Clientes web para los servicios jSON y XML de la versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="el-modo-html-de-la-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. El modo HTML de la versión 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Ejercicio práctico: versión 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Ejercicio práctico: versión 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Ejercicio práctico: versión 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Ejercicio práctico: versión 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Ejercicio práctico: versión 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ejercicio-practico-version-18-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Ejercicio práctico: versión 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="toc48548962" name="toc48548962" class="odt-bookmark-anchor"></span>
+<span id="exercicedapplication-" name="exercicedapplication-" class="odt-bookmark-anchor"></span>
+<span id="refheading382662423505" name="refheading382662423505" class="odt-bookmark-anchor"></span></p>
+<h1 id="8-ejercicio-de-aplicacion-version-1">8. <span style="color: #365f91">Ejercicio de aplicación – versión 1</span></h1>
+<p><span id="toc48548963" name="toc48548963" class="odt-bookmark-anchor"></span>
+<span id="leprobleme" name="leprobleme" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2333623032778139" name="refheadingtoc2333623032778139" class="odt-bookmark-anchor"></span></p>
+<h2 id="81-el-problema">8.1. <span style="color: #4f81bd">El problema</span></h2>
+<p><img src="images/100000010000031C0000030A7A66B712.png" width="497" height="486" style="width:13.152cm;height:12.853cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000031C0000030A7A66B712.png" /></p>
+<p>La tabla anterior permite calcular el impuesto en el caso simplificado de un contribuyente que solo tiene que declarar su salario. Como indica la nota (1), el impuesto así calculado es el impuesto antes de aplicar tres mecanismos:</p>
+<ul>
+<li>el límite máximo del coeficiente familiar, que se aplica a los ingresos altos;</li>
+<li>la bonificación y la reducción de impuestos que se aplican a los ingresos bajos;</li>
+</ul>
+<p>Por lo tanto, el cálculo del impuesto comprende los siguientes pasos <strong>[http://impotsurlerevenu.org/comprendre-le-calcul-de-l-impot/1217-calcul-de-l-impot-2019.php]</strong>:</p>
+<p><img src="images/10000001000003180000010D0C81DCD5.png" width="497" height="169" style="width:13.139cm;height:4.463cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003180000010D0C81DCD5.png" /></p>
+<p>Nos proponemos escribir un programa que permita calcular el impuesto de un contribuyente en el caso simplificado de un contribuyente que solo tenga que declarar su salario:</p>
+<p><span id="toc48548964" name="toc48548964" class="odt-bookmark-anchor"></span>
+<span id="calculdelimpot" name="calculdelimpot" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc185625971629160" name="refheadingtoc185625971629160" class="odt-bookmark-anchor"></span></p>
+<h3 id="811-calculo-del-impuesto-bruto">8.1.1. <span style="color: #4f81bd">Cálculo del impuesto bruto</span></h3>
+<p>El impuesto bruto se puede calcular de la siguiente manera:</p>
+<p>Primero se calcula el número de partes del contribuyente:</p>
+<ul>
+<li>cada padre aporta 1 parte;</li>
+<li>los dos primeros hijos aportan cada uno 1/2 parte;</li>
+<li>los hijos siguientes aportan una parte cada uno:</li>
+</ul>
+<p>Por lo tanto, el número de partes es:</p>
+<ul>
+<li>nbParts = 1 + nbEnfants * 0,5 + (nbEnfants - 2) * 0,5 si el empleado no está casado;</li>
+<li>nbParts = 2 + nbEnfants * 0,5 + (nbEnfants - 2) * 0,5 si está casado;<ul>
+<li>donde <em>nbEnfants</em> es su número de hijos;</li>
+</ul>
+</li>
+<li>se calcula el ingreso imponible <strong>R = 0,9 * S,</strong> donde <em>S</em> es el salario anual;</li>
+<li>se calcula el cociente familiar QF = R / <strong>nbParts;</strong></li>
+<li>se calcula el impuesto bruto <strong>I</strong> según los siguientes datos (2019):</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">9964</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">0</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">0</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">27519</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">0,14</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">1394,96</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">73 779</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">0,3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5798</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">156 244</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">0,4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">13 913,69</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">0</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">0,45</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">20163,45</div></td></tr></table>
+
+<p>Cada línea tiene 3 campos: <em>champ1</em>, <em>champ2</em>, <em>champ3</em>. Para calcular el impuesto I, se busca la primera línea en la que <em>QF ≤ campo1</em> y se toman los valores de esa línea. Por ejemplo, para un empleado casado con dos hijos y un salario anual S de <strong>50 000</strong> euros:</p>
+<p>Ingreso imponible: R = 0,9 * S = 45 000</p>
+<p>Número de cuotas: nbParts = 2 + 2 * 0,5 = 3</p>
+<p>Cotizante familiar: QF = 45 000 / 3 = 15 000</p>
+<p>La primera línea en la que QF &lt;= campo1 es la siguiente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    27519    0.14    1394.96
+</code></pre></div>
+<p>El impuesto <em>I</em> es, por lo tanto, igual a <strong>0,14*R – 1394,96*nbParts</strong> = [0,14*45000-1394,96*3] = <strong>2115</strong>. El impuesto se redondea al euro inferior.</p>
+<p>Si la relación <em>QF &lt;= campo1 se cumple</em> desde la primera línea, entonces el impuesto es cero.</p>
+<p>Si QF es tal que la relación <em>QF &lt;= campo1</em> nunca se cumple, entonces se utilizan los coeficientes de la última línea. En este caso:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    0    0.45    20163.45
+</code></pre></div>
+<p>lo que da como resultado el impuesto bruto <strong>I = 0,45*R – 20 163,45*nbParts</strong>.</p>
+<p><span id="toc48548965" name="toc48548965" class="odt-bookmark-anchor"></span>
+<span id="plafonnementduquotient" name="plafonnementduquotient" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc1594583098701287" name="refheadingtoc1594583098701287" class="odt-bookmark-anchor"></span></p>
+<h3 id="812-limite-maximo-del-cociente-familiar">8.1.2. <span style="color: #4f81bd">Límite máximo del cociente familiar</span></h3>
+<p><img src="images/100000010000032A0000015B9ADBFD17.png" width="523" height="224" style="width:13.839cm;height:5.928cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000032A0000015B9ADBFD17.png" /></p>
+<p>Para saber si se aplica el límite máximo del cociente familiar QF, se vuelve a calcular el impuesto bruto sin los hijos. Siguiendo con el ejemplo del empleado casado con dos hijos y un salario anual S de <strong>50 000</strong> euros:</p>
+<p>Ingreso imponible: R = 0,9 * S = 45 000</p>
+<p>Número de partes: nbParts = 2 (ya no se cuentan los hijos)</p>
+<p>Cotiente familiar: QF = 45 000 / 2 = 22 500</p>
+<p>La primera línea en la que QF &lt;= campo1 es la siguiente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    27519    0.14    1394.96
+</code></pre></div>
+<p>El impuesto <em>I</em> es, por lo tanto, igual a <strong>0,14*R – 1394,</strong>96*nbParts <strong>= [0,14*45000-1394,96*2] = 351</strong>0.</p>
+<p>Ganancia máxima relacionada con los hijos: 1551 * 2  = 3102 euros</p>
+<p>Impuesto mínimo: 3510 – 3102 = 408 euros</p>
+<p>El impuesto bruto con 3 partes, ya calculado en 2115 euros, es mayor que el impuesto mínimo de 408 euros, por lo que el límite familiar no se aplica en este caso.</p>
+<p>En general, el impuesto bruto es <strong>mayor que (impuesto1, impuesto2),</strong> donde:</p>
+<ul>
+<li><strong>[impôt1]</strong>: es el impuesto bruto calculado con los hijos;</li>
+<li><strong>[impôt2]</strong>: es el impuesto bruto calculado sin los hijos y menos la deducción máxima (en este caso, 1551 euros por media parte) relacionada con los hijos;</li>
+</ul>
+<p><span id="toc48548966" name="toc48548966" class="odt-bookmark-anchor"></span>
+<span id="calculdela" name="calculdela" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc185627971629160" name="refheadingtoc185627971629160" class="odt-bookmark-anchor"></span></p>
+<h3 id="813-calculo-de-la-reduccion">8.1.3. <span style="color: #4f81bd">Cálculo de la reducción</span></h3>
+<p><img src="images/100000010000032A0000011298E98FA1.png" width="524" height="177" style="width:13.852cm;height:4.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000032A0000011298E98FA1.png" /></p>
+<p>Siguiendo con el ejemplo del empleado casado con dos hijos y un salario anual S de <strong>50 000</strong> euros:</p>
+<p>El impuesto bruto (2115) obtenido en el paso anterior es inferior a 2627 euros para una pareja (1595 euros para una persona soltera): por lo tanto, se aplica la reducción. Se obtiene mediante el siguiente cálculo:</p>
+<p>descuento = umbral (pareja = 1970 / soltero = 1196) - 0,75 * Impuesto bruto</p>
+<p>descuento = 1970 - 0,75 × 2115 = 383,75, redondeado a <strong>384</strong> euros.</p>
+<p><strong>Nuevo impuesto</strong> bruto = 2115 - 384 = <strong>1731</strong> euros</p>
+<p><span id="toc48548967" name="toc48548967" class="odt-bookmark-anchor"></span>
+<span id="calculdela1" name="calculdela1" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc185629971629160" name="refheadingtoc185629971629160" class="odt-bookmark-anchor"></span></p>
+<h3 id="814-calculo-de-la-reduccion-de-impuestos">8.1.4. <span style="color: #4f81bd">Cálculo de la reducción de impuestos</span></h3>
+<p><img src="images/100000010000032A0000011677A64931.png" width="523" height="179" style="width:13.831cm;height:4.747cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000032A0000011677A64931.png" /></p>
+<p>Por debajo de cierto umbral, se aplica una reducción del 20 % sobre el impuesto bruto resultante de los cálculos anteriores. En 2019, los umbrales son los siguientes:</p>
+<ul>
+<li>soltero: 21 037 euros;</li>
+<li>pareja: 42 074 euros; (la cifra de 37 968 utilizada en el ejemplo anterior parece errónea);</li>
+</ul>
+<p>Este umbral se incrementa en el valor: 3797 * (número de medias partes aportadas por los hijos).</p>
+<p>Siguiendo con el ejemplo del empleado casado con dos hijos y un salario anual S de <strong>50 000</strong> euros:</p>
+<ul>
+<li>su ingreso imponible (45 000 euros) es inferior al umbral (42 074 + 2 × 3797) = 49 668 euros;</li>
+<li>por lo tanto, tiene derecho a una reducción del 20 % de su impuesto: 1731 * 0,2 = 346,2 euros, redondeado a 347 euros;</li>
+<li>el impuesto bruto del contribuyente queda en: 1731 - 347 = <strong>1384</strong> euros;</li>
+</ul>
+<p><span id="toc48548968" name="toc48548968" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc185631971629160" name="refheadingtoc185631971629160" class="odt-bookmark-anchor"></span></p>
+<h3 id="815-calculo-del-impuesto-neto">8.1.5. <span style="color: #4f81bd">Cálculo del impuesto neto</span></h3>
+<p>Nuestro cálculo terminará aquí: el impuesto neto a pagar será de <strong>1384</strong> euros. En la realidad, el contribuyente puede beneficiarse de otras reducciones, en particular por donaciones a organizaciones de interés público o general.</p>
+<p><span id="toc48548969" name="toc48548969" class="odt-bookmark-anchor"></span>
+<span id="casdeshauts" name="casdeshauts" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc185633971629160" name="refheadingtoc185633971629160" class="odt-bookmark-anchor"></span></p>
+<h3 id="816-caso-de-los-ingresos-altos">8.1.6. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">Caso de los ingresos altos</span></strong></span></h3>
+<p>Nuestro ejemplo anterior corresponde a la mayoría de los casos de asalariados. Sin embargo, el cálculo del impuesto es diferente en el caso de los ingresos elevados.</p>
+<p><span id="refheadingtoc185635971629160" name="refheadingtoc185635971629160" class="odt-bookmark-anchor"></span></p>
+<h4 id="8161-limite-maximo-de-la-reduccion-del-10-sobre-los-ingresos-anuales">8.1.6.1. <span style="color: #4f81bd">Límite máximo de la reducción del 10 % sobre los ingresos anuales</span></h4>
+<p>En la mayoría de los casos, el ingreso imponible se calcula mediante la fórmula: R = 0,9 * S, donde S es el salario anual. A esto se le llama la reducción del 10 %. Esta reducción tiene un límite máximo. En 2019:</p>
+<ul>
+<li>no puede ser superior a 12 502 euros;</li>
+<li>no puede ser inferior a 437 euros;</li>
+</ul>
+<p>Tomemos el caso de un empleado soltero sin hijos y con un salario anual de 200 000 euros:</p>
+<ul>
+<li>la reducción del 10 % es de 20 000 euros &gt; 12 502 euros. Por lo tanto, se reduce a 12 502 euros;</li>
+</ul>
+<p><span id="refheadingtoc185637971629160" name="refheadingtoc185637971629160" class="odt-bookmark-anchor"></span></p>
+<h4 id="8162-limite-maximo-del-cociente-familiar">8.1.6.2. <span style="color: #4f81bd">Límite máximo del cociente familiar</span></h4>
+<p>Consideremos un caso en el que se aplica el límite máximo familiar mencionado en el párrafo <a href="#plafonnementduquotient"><u><span style="color: #0563c1">|Límite máximo del cociente</span></u></a> familiar|. Tomemos el caso de una pareja con tres hijos y ingresos anuales de 100 000 euros. Repasemos los pasos del cálculo:</p>
+<ul>
+<li>la deducción del 10 % es de 10 000 euros &lt; 12 502 euros. Por lo tanto, el ingreso imponible <strong>R</strong> es 100 000 - 10 000 = 90 000 euros;</li>
+<li>la pareja tiene nbParts = 2 + 0,<strong>5 × 2 + 1 = 4</strong> partes;</li>
+<li>por lo tanto, su cociente familiar es QF = R / <strong>nbParts</strong> = 90 000 / 4 = 22 <strong>500</strong> euros;</li>
+<li>su impuesto bruto <strong>I1 con</strong> hijos es I1 = 0,14 × 90 000 − 1 394,96 × 4 = 7 020 euros;</li>
+<li>su impuesto bruto <strong>I2 sin</strong> hijos:</li>
+<li><strong>QF = 90</strong> 000 / 2 = 45 000 euros;</li>
+<li>I2 = 0,3 × 90 000 − 5 798 × 2 = 15 404 euros;</li>
+<li>la regla del límite máximo del coeficiente familiar establece que el beneficio que aportan los hijos no puede superar (1551 × 4 medias partes) = 6204 euros. Sin embargo, en este caso es I2-I1 = 15 404 - 7 020 = 8 384 euros, por lo que es superior a 6 204 euros;</li>
+<li>por lo tanto, el impuesto bruto se vuelve a calcular como I3 = <strong>I2-6204</strong> = 15 404 - 6 204 = <strong>9 200</strong> euros;</li>
+</ul>
+<p>Esta pareja no tendrá ni descuento ni reducción, y su impuesto final será de <strong>9200</strong> euros.</p>
+<p><span id="toc48548970" name="toc48548970" class="odt-bookmark-anchor"></span>
+<span id="chiffresofficiels" name="chiffresofficiels" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc185639971629160" name="refheadingtoc185639971629160" class="odt-bookmark-anchor"></span></p>
+<h3 id="817-cifras-oficiales">8.1.7. <span style="color: #4f81bd">Cifras oficiales</span></h3>
+<p>El cálculo del impuesto es complejo. A lo largo de este documento, las simulaciones se realizarán con los siguientes ejemplos. Los resultados provienen del simulador de la administración tributaria |<a href="https://www3.impots.gouv.fr/simulateur/calcul_impot/2019/simplifie/index.htm"><u><span style="color: #0563c1">https://www3.impots.gouv.fr/simulateur/calcul_impot/2019/simplifie/index.htm</span></u></a>|:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Contribuyente</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Resultados oficiales</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Resultados del algoritmo del documento</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Pareja con 2 hijos y ingresos anuales de 55 555 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 2815 </b>euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 14 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 2814 </b>euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 14 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Pareja con dos hijos y ingresos anuales de 50 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 1385 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 720 euros</div><div style="margin:0 0 0.5em 0">Reducción = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 14 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 1384 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 384 euros</div><div style="margin:0 0 0.5em 0">Descuento = 347 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 14 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Pareja con 3 hijos y ingresos anuales de 50 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 0 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 384 euros</div><div style="margin:0 0 0.5em 0">Descuento = 346 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 14 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 0 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 720 euros</div><div style="margin:0 0 0.5em 0">Reducción = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 14 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Soltero con 2 hijos y ingresos anuales de 100 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 19 884 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 41 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 19 884 </b>euros</div><div style="margin:0 0 0.5em 0">Recargo = 4480 euros</div><div style="margin:0 0 0.5em 0">descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Reducción = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 41 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Soltero con 3 hijos y ingresos anuales de 100 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 16 782 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 41 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 16 782 </b>euros</div><div style="margin:0 0 0.5em 0">Recargo = 7176 euros</div><div style="margin:0 0 0.5em 0">descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Reducción = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 41 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Pareja con 3 hijos y ingresos anuales de 100 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 9200 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 30 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> = 9200 euros</div><div style="margin:0 0 0.5em 0">Recargo = 2180 euros</div><div style="margin:0 0 0.5em 0">descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Reducción = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 30 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Pareja con 5 hijos y ingresos anuales de 100 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 4230 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 14 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 4230 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 14 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Soltero sin hijos y con ingresos anuales de 100 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 22 986 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 41 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Impuesto =<b> 22 986 </b>euros</div><div style="margin:0 0 0.5em 0">Recargo = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Reducción = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 41 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Pareja con dos hijos y ingresos anuales de 30 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 0 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 0 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto</b> =<b> 0 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 0 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Soltero sin hijos y con ingresos anuales de 200 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 64 211 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 45 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Impuesto =<b> 64 210 </b>euros</div><div style="margin:0 0 0.5em 0">Recargo = 7498 euros</div><div style="margin:0 0 0.5em 0">descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Reducción = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 45 %</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Pareja con 3 hijos y ingresos anuales de 200 000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 42 843 </b>euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 41 %</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Impuesto = 42 842 </b>euros</div><div style="margin:0 0 0.5em 0">Recargo = 17 283 euros</div><div style="margin:0 0 0.5em 0">descuento = 0 euros</div><div style="margin:0 0 0.5em 0">Reducción = 0 euros</div><div style="margin:0 0 0.5em 0">Tasa impositiva = 41 %</div></td></tr></table>
+
+<p>En el ejemplo anterior, se denomina recargo a lo que pagan de más las personas con ingresos altos debido a dos fenómenos:</p>
+<ul>
+<li>el límite máximo de la deducción del 10 % sobre los ingresos anuales;</li>
+<li>el límite máximo del coeficiente familiar;</li>
+</ul>
+<p>Este indicador no se pudo verificar porque el simulador de la administración tributaria no lo proporciona.</p>
+<p>Se observa que el algoritmo del documento calcula el impuesto correcto en todos los casos, aunque con un margen de error de 1 euro. Este margen de error se debe a los redondeos. Todas las cantidades monetarias se redondean a veces al euro superior y otras al euro inferior. Como no conocía las reglas oficiales, las cantidades del algoritmo del documento se redondearon:</p>
+<ul>
+<li>al euro superior para los descuentos y rebajas;</li>
+<li>al euro inferior para los recargos y el impuesto final;</li>
+</ul>
+<p>Vamos a desarrollar varias versiones de la aplicación para calcular el impuesto.</p>
+<p><span id="toc48548971" name="toc48548971" class="odt-bookmark-anchor"></span>
+<span id="version1" name="version1" class="odt-bookmark-anchor"></span>
+<span id="refheading398861881943603" name="refheading398861881943603" class="odt-bookmark-anchor"></span></p>
+<h2 id="82-version-1">8.2. <span style="color: #4f81bd">Versión 1</span></h2>
+<p><img src="images/10000001000001E80000014EC2F618ED.png" width="244" height="167" style="width:6.451cm;height:4.415cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001E80000014EC2F618ED.png" /></p>
+<p><span id="toc48548972" name="toc48548972" class="odt-bookmark-anchor"></span>
+<span id="lescriptprincipal" name="lescriptprincipal" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc1882273931965946" name="refheadingtoc1882273931965946" class="odt-bookmark-anchor"></span></p>
+<h3 id="821-el-script-principal">8.2.1. <span style="color: #4f81bd">El script principal</span></h3>
+<p>Presentamos un primer programa en el que:</p>
+<ul>
+<li>los datos necesarios para el cálculo del impuesto están codificados de forma fija en el código en forma de listas y constantes;</li>
+<li>los datos de los contribuyentes (estado civil, hijos, salario) se encuentran en un primer archivo de texto <strong>[taxpayersdata.txt]</strong>;</li>
+<li>los resultados del cálculo del impuesto (estado civil, hijos, salario, impuesto) se almacenan en un segundo archivo de texto <strong>[résultats.txt]</strong>;</li>
+</ul>
+<p>El script <strong>[v-01/main.py]</strong> es el siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># módulos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">sys</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> </span><span style="color:#6f008a">impots</span><span style="color:#000000">.</span><span style="color:#6f008a">v01</span><span style="color:#000000">.</span><span style="color:#6f008a">shared</span><span style="color:#000000">.</span><span style="color:#6f008a">impôts_module_01</span><span style="color:#000000"> </span><span style="color:#0000ff">import</span><span style="color:#000000"> *</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># main -----------------------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># constantes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># archivo de contribuyentes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">DATA = </span><span style="color:#a31515">&quot;./data/taxpayersdata.txt&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># archivo de resultados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">RESULTATS = </span><span style="color:#a31515">&quot;./data/résultats.txt&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># lectura de los datos de los contribuyentes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    tax_payers = get_taxpayers_data(DATA)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># lista de resultados</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    results = </span><span style="font-weight:bold;color:#000000">[]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se calcula el impuesto de los contribuyentes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">for</span><span style="color:#000000"> tax_payer </span><span style="color:#0000ff">in</span><span style="color:#000000"> tax_payers:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># el cálculo del impuesto devuelve un diccionario de claves</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># [&#x27;marié&#x27;, &#x27;enfants&#x27;, &#x27;salaire&#x27;, &#x27;impôt&#x27;, &#x27;surcôte&#x27;, &#x27;décôte&#x27;, &#x27;réduction&#x27;, &#x27;taux&#x27;]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        result = calcul_impôt(tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;marié&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;enfants&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;salaire&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># el diccionario se agrega a la lista de resultados</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        results.append(result)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se guardan los resultados</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    record_results(RESULTATS, results)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">except</span><span style="color:#000000"> </span><span style="color:#2b91af">BaseException</span><span style="color:#000000"> </span><span style="color:#0000ff">as</span><span style="color:#000000"> erreur:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># pueden presentarse diferentes errores: falta el archivo, contenido incorrecto del archivo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se muestra el error y se sale de la aplicación</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;l&#x27;erreur suivante s&#x27;est produite : {erreur}]\n&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#6f008a">sys</span><span style="color:#000000">.exit()</span></span></span>
+</code></pre></div>
+
+<p><strong>Notas</strong></p>
+<ul>
+<li>línea 4: se utiliza el módulo <strong>[impots.v01.modules.impôts_module_01]</strong><span style="color: #6f008a">. </span>Cabe recordar que esta ruta se mide a partir de la raíz del proyecto PyCharm;</li>
+<li>línea 10: el archivo <strong>[data/taxpayersdata.txt]</strong> es el siguiente:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>oui,2,55555
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>oui,2,50000
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>oui,3,50000
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>non,2,100000
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>non,3,100000
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>oui,3,100000
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>oui,5,100000
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>non,0,100000
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>oui,2,30000
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>non,0,200000
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>oui,3,200000
+</code></pre></div></td></tr></table></div>
+<p>Cada línea representa una tupla de tres elementos <strong>[marié / pacsé ou pas, nombre d&#x27;enfants, salaire annuel en euros]</strong>.</p>
+<ul>
+<li>línea 12: el archivo donde se colocarán los resultados del cálculo del impuesto para cada uno de los contribuyentes del archivo <strong>[taxpayersdata.txt]</strong>. Tendrá el siguiente contenido:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 55555, &#39;impôt&#39;: 2814, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 1384, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 384, &#39;réduction&#39;: 347, &#39;taux&#39;: 0.14}
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 720, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 19884, &#39;surcôte&#39;: 4480, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 16782, &#39;surcôte&#39;: 7176, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 9200, &#39;surcôte&#39;: 2180, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.3}
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 5, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 4230, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 0, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 22986, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 30000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0}
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 0, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 64210, &#39;surcôte&#39;: 7498, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.45}
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 42842, &#39;surcôte&#39;: 17283, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>línea 16: se recuperan los datos de los contribuyentes contenidos en <strong>[taxpayersdata.txt]</strong>. Se recupera una lista de diccionarios de claves <strong>[marié, enfants, salaire], donde</strong> cada diccionario representa a un contribuyente;</li>
+<li>líneas 17-25: se calcula el impuesto de los contribuyentes de la lista <strong>[taxPayers]</strong>. Se recupera una lista <strong>[results],</strong> en la que cada elemento es, a su vez, un diccionario de claves <strong>[marié, enfants, salaire, impôt, surcôte, décôte, réduction, taux]</strong>;</li>
+<li>línea 27: la lista <strong>[results]</strong> de resultados se guarda en el archivo <strong>[résultats.txt]</strong> en el formato mostrado anteriormente;</li>
+<li>líneas 28-32: se interceptan todas las excepciones que puedan surgir del módulo <strong>[impots.v01.modules.impôts_module_01]</strong>;</li>
+</ul>
+<p>Ahora vamos a detallar las tres funciones que utiliza el script <strong>[main]</strong>:</p>
+<ul>
+<li><strong>[get_taxpayers_data]</strong>: para leer los datos de los contribuyentes;</li>
+<li><strong>[calcul_impôt]</strong>: para calcular el impuesto de estos;</li>
+<li><strong>[record_results]</strong>: para guardar los resultados en un archivo de texto;</li>
+</ul>
+<p>Todas estas funciones se encuentran en el módulo <strong>[impots.modules.impôts_module_01]</strong>.</p>
+<p><span id="toc48548973" name="toc48548973" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521312924280206" name="refheadingtoc2521312924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="822-el-modulo-impotsv01sharedimpots_module_01">8.2.2. <span style="color: #4f81bd"><strong>El módulo</strong> [impots.v01.shared.impôts_module_01]</span></h3>
+<p>Las funciones necesarias para el cálculo del impuesto se han reunido en el módulo <strong>[impots.v01.shared.impôts_module_01]</strong>:</p>
+<p><img src="images/10000000000005A80000034C7B8390E7.png" width="633" height="369" style="width:16.739cm;height:9.758cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005A80000034C7B8390E7.png" /></p>
+<ul>
+<li>en <strong>[1]</strong>: definición de las constantes para el cálculo del impuesto;</li>
+<li>en <strong>[2]</strong>: la lista de funciones del módulo;</li>
+</ul>
+<p><span id="toc48548974" name="toc48548974" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521332924280206" name="refheadingtoc2521332924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="823-la-funcion-get_taxpayers_data">8.2.3. <span style="color: #4f81bd"><strong>La función</strong> [get_taxpayers_data]</span></h3>
+<p>La función <strong>[get_taxpayers_data]</strong> es la siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># importaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> </span><span style="color:#6f008a">codecs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># lectura de los datos de los contribuyentes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ----------------------------------------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> get_taxpayers_data(</span><span style="color:#808080">taxpayers_filename</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">list</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># lectura de los datos de los contribuyentes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    file = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># la lista de contribuyentes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        taxpayers = </span><span style="font-weight:bold;color:#000000">[]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># apertura del archivo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        file = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#808080">taxpayers_filename</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;r&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf8&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se lee la primera línea del archivo de contribuyentes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ligne = file.readline().strip()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># mientras quede una línea por procesar</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">while</span><span style="color:#000000"> ligne != </span><span style="color:#a31515">&#x27;&#x27;</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se recuperan los tres campos «casado», «hijos» y «salario» que conforman la línea</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            (marié, enfants, salaire) = ligne.split(</span><span style="color:#a31515">&quot;,&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se agregan a la lista de contribuyentes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            taxpayers.append({</span><span style="color:#a31515">&#x27;marié&#x27;</span><span style="color:#000000">: marié.strip().lower(), </span><span style="color:#a31515">&#x27;enfants&#x27;</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">(enfants), </span><span style="color:#a31515">&#x27;salaire&#x27;</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">(salaire)})</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se lee una nueva línea del archivo de contribuyentes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            ligne = file.readline().strip()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se devuelve el resultado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> taxpayers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se cierra el archivo si estaba abierto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> file:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            file.close()</span></span>
+</code></pre></div>
+
+<p><strong>Notas</strong></p>
+<ul>
+<li>línea 7: <strong>[taxpayers_filename]</strong> es el nombre del archivo que se va a procesar. La función devuelve una lista;</li>
+<li>líneas 18-24: el bucle de procesamiento de las líneas <strong>[marié, enfants, salaire]</strong> del archivo de texto;</li>
+<li>línea 20: se recuperan los tres elementos de la línea. Aquí se supone que la línea es sintácticamente correcta, es decir, que cuenta con los tres elementos esperados;</li>
+<li>línea 22: se construye un diccionario con las claves <strong>[marié, enfants, salaire]</strong> y este diccionario se agrega a la lista <strong>[taxPayers]</strong>;</li>
+<li>línea 26: una vez procesado el archivo, se devuelve la lista <strong>[taxPayers]</strong>;</li>
+<li>líneas 10-30: cabe señalar que no se ha incluido la cláusula <strong>[catch]</strong> en <strong>[try]</strong> de la línea 10. La cláusula <strong>[catch]</strong> no es obligatoria. En la línea 27, se ha incluido una cláusula <strong>[finally]</strong> para cerrar el archivo de texto en cualquier caso, haya error o no;</li>
+<li>esta estructura try / finally permite que se escape una posible excepción (no hay un catch). Esta excepción se propagará al script principal <strong>[main],</strong> el cual se detendrá y mostrará la excepción (véase el párrafo |El script principal|). Este mecanismo se ha utilizado para la mayoría de las funciones del módulo;</li>
+</ul>
+<p><span id="toc48548975" name="toc48548975" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521352924280206" name="refheadingtoc2521352924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="824-la-funcion-calcul_impot">8.2.4. <span style="color: #4f81bd"><strong>La función</strong> [calcul_impôt]</span></h3>
+<p>La función <strong>[calcul_impôt]</strong> es la siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># importaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">codecs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span><span style="color:#6f008a">math</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># tramos del impuesto de 2019</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">limites = </span><span style="font-weight:bold;color:#000000">[9964, 27519, 73779, 156244, 0]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">coeffr = </span><span style="font-weight:bold;color:#000000">[0, 0.14, 0.3, 0.41, 0.45]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">coeffn = </span><span style="font-weight:bold;color:#000000">[0, 1394.96, 5798, 13913.69, 20163.45]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># constantes para el cálculo del impuesto de 2019</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">PLAFOND_QF_DEMI_PART = 1551</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">PLAFOND_REVENUS_CELIBATAIRE_POUR_REDUCTION = 21037</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">PLAFOND_REVENUS_COUPLE_POUR_REDUCTION = 42074</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">VALEUR_REDUC_DEMI_PART = 3797</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">PLAFOND_DECOTE_CELIBATAIRE = 1196</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">PLAFOND_DECOTE_COUPLE = 1970</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">PLAFOND_IMPOT_COUPLE_POUR_DECOTE = 2627</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">PLAFOND_IMPOT_CELIBATAIRE_POUR_DECOTE = 1595</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ABATTEMENT_DIXPOURCENT_MAX = 12502</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ABATTEMENT_DIXPOURCENT_MIN = 437</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># cálculo del impuesto</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ----------------------------------------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> calcul_impôt(</span><span style="color:#808080">marié</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">enfants</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">salaire</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># casado: sí, no</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># hijos: número de hijos</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># salario: salario anual</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># límites, coeffr, coeffn: las tablas de datos que permiten el cálculo del impuesto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">#</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># cálculo del impuesto con hijos</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    result1 = calcul_impôt_2(</span><span style="color:#808080">marié</span><span style="color:#000000">, </span><span style="color:#808080">enfants</span><span style="color:#000000">, </span><span style="color:#808080">salaire</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    impot1 = result1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;impôt&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># cálculo del impuesto sin hijos</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">enfants</span><span style="color:#000000"> != 0:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        result2 = calcul_impôt_2(</span><span style="color:#808080">marié</span><span style="color:#000000">, 0, </span><span style="color:#808080">salaire</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        impot2 = result2</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;impôt&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># Aplicación del límite máximo del coeficiente familiar</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">enfants</span><span style="color:#000000"> &lt; 3:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># PLAFOND_QF_DEMI_PART euros para los dos primeros hijos</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            impot2 = impot2 - </span><span style="color:#808080">enfants</span><span style="color:#000000"> * PLAFOND_QF_DEMI_PART</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># PLAFOND_QF_DEMI_PART euros para los dos primeros hijos, el doble para los siguientes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            impot2 = impot2 - 2 * PLAFOND_QF_DEMI_PART - (</span><span style="color:#808080">enfants</span><span style="color:#000000"> - 2) * 2 * PLAFOND_QF_DEMI_PART</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        impot2 = impot1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        result2 = result1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># se toma el impuesto más alto con la tasa y el recargo correspondientes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> impot1 &gt; impot2:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        impot = impot1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        taux = result1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;taux&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        surcôte = result1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;surcôte&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        surcôte = impot2 - impot1 + result2</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;surcôte&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        impot = impot2</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        taux = result2</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;taux&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># cálculo de una posible reducción</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    décôte = get_décôte(</span><span style="color:#808080">marié</span><span style="color:#000000">, </span><span style="color:#808080">salaire</span><span style="color:#000000">, impot)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    impot -= décôte</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># cálculo de una posible reducción de impuestos</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    réduction = get_réduction(</span><span style="color:#808080">marié</span><span style="color:#000000">, </span><span style="color:#808080">salaire</span><span style="color:#000000">, </span><span style="color:#808080">enfants</span><span style="color:#000000">, impot)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    impot -= réduction</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># resultado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span><span style="color:#a31515">&quot;marié&quot;</span><span style="color:#000000">: </span><span style="color:#808080">marié</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;enfants&quot;</span><span style="color:#000000">: </span><span style="color:#808080">enfants</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;salaire&quot;</span><span style="color:#000000">: </span><span style="color:#808080">salaire</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;impôt&quot;</span><span style="color:#000000">: </span><span style="color:#6f008a">math</span><span style="color:#000000">.floor(impot), </span><span style="color:#a31515">&quot;surcôte&quot;</span><span style="color:#000000">: surcôte,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#a31515">&quot;décôte&quot;</span><span style="color:#000000">: décôte, </span><span style="color:#a31515">&quot;réduction&quot;</span><span style="color:#000000">: réduction, </span><span style="color:#a31515">&quot;taux&quot;</span><span style="color:#000000">: taux}</span></span></span>
+</code></pre></div>
+
+<p><strong>Notas</strong></p>
+<ul>
+<li>líneas 6-8: los tramos del impuesto (véase el párrafo |Cálculo del impuesto bruto|);</li>
+<li>líneas 11-20: las constantes del cálculo del impuesto;</li>
+<li>Cabe señalar que los elementos inicializados en las líneas 5 a 20 serán globales para las funciones que vamos a describir. Por lo tanto, se conocen siempre y cuando la función que los utilice no declare variables con los mismos nombres;</li>
+<li>las cifras de las líneas 5-20 cambian cada año. Aquí se trata de las cifras de 2019;</li>
+<li>línea 25: la función <strong>[calcul_impôt]</strong> recibe tres parámetros:<ul>
+<li><strong>[marié]</strong>: sí / no, indica si el contribuyente está casado o en unión civil;</li>
+<li><strong>[enfants]</strong>: su número de hijos;</li>
+<li><strong>[salaire]</strong>: su salario anual en euros;</li>
+</ul>
+</li>
+<li>líneas 31-33: cálculo del impuesto teniendo en cuenta los hijos; </li>
+<li>líneas 34-47: estas líneas aplican el límite máximo del coeficiente familiar (véase el párrafo |Límite máximo del coeficiente familiar|);</li>
+<li>líneas 49-57: estas líneas calculan la tasa impositiva del contribuyente, así como un posible recargo (véase el párrafo |Casos de ingresos elevados|);</li>
+<li>líneas 59-61: cálculo de una posible reducción (véase el párrafo |Cálculo de la reducción|);</li>
+<li>líneas 62-64: cálculo de una posible reducción del impuesto a pagar (véase el párrafo |Cálculo de la reducción de impuestos|);</li>
+</ul>
+<p>El algoritmo es bastante complejo y no lo detallaremos más allá de lo que indican los comentarios. El algoritmo implementa el método de cálculo del impuesto tal como se describe en el párrafo <a href="#leprobleme"><u><span style="color: #0563c1">|El</span></u></a> problema|.</p>
+<p><span id="toc48548976" name="toc48548976" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521372924280206" name="refheadingtoc2521372924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="825-la-funcion-calcul_impot_2">8.2.5. <span style="color: #4f81bd"><strong>La función</strong> [calcul_impôt_2]</span></h3>
+<p>La función <strong>[calcul_impôt]</strong> utiliza la siguiente función <strong>[calcul_impôt_2]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span> calcul_impôt_2(<span style="color:#808080">marié</span>: <span style="color:#2b91af">str</span>, <span style="color:#808080">enfants</span>: <span style="color:#2b91af">int</span>, <span style="color:#808080">salaire</span>: <span style="color:#2b91af">int</span>) -&gt; <span style="color:#2b91af">list</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # casado: sí, no</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # hijos: número de hijos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # salario: salario anual</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # límites, coeffr, coeffn: las tablas de datos que permiten calcular el impuesto</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">#</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # número de partes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#808080">marié</span> = <span style="color:#808080">marié</span>.strip().lower()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> <span style="color:#808080">marié</span> == <span style="color:#a31515">&quot;oui&quot;</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        nb_parts = <span style="color:#808080">enfants</span> / 2 + 2</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">else</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        nb_parts = <span style="color:#808080">enfants</span> / 2 + 1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # 1 parte por hijo a partir del tercero</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> <span style="color:#808080">enfants</span> &gt;= 3:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # media parte adicional por cada hijo a partir del tercero</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        nb_parts += 0.5 * (<span style="color:#808080">enfants</span> - 2)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # ingresos imponibles</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    revenu_imposable = get_revenu_imposable(<span style="color:#808080">salaire</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # recargo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    surcôte = <span style="color:#6f008a">math</span>.floor(revenu_imposable - 0.9 * <span style="color:#808080">salaire</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # por problemas de redondeo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> surcôte &lt; 0:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        surcôte = 0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # coeficiente familiar</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    quotient = revenu_imposable / nb_parts</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # se coloca al final de la tabla de límites para detener el bucle que sigue</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    limites<span style="font-weight:bold">[len(limites) - 1]</span> = quotient</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # cálculo del impuesto</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    i = 0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">while</span> quotient &gt; limites<span style="font-weight:bold">[i]</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        i += 1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # debido a que se colocó el cociente familiar al final de la tabla de límites, el bucle anterior</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # no puede sobrepasar los límites de la tabla</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # ahora se puede calcular el impuesto</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    impôt = <span style="color:#6f008a">math</span>.floor(revenu_imposable * coeffr<span style="font-weight:bold">[i]</span> - nb_parts * coeffn<span style="font-weight:bold">[i]</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # resultado</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> {<span style="color:#a31515">&quot;impôt&quot;</span>: impôt, <span style="color:#a31515">&quot;surcôte&quot;</span>: surcôte, <span style="color:#a31515">&quot;taux&quot;</span>: coeffr<span style="font-weight:bold">[i]</span>}</span></span>
+</code></pre></div>
+
+<p>Este algoritmo se describió en el párrafo 8.1.1.</p>
+<p><span id="toc48548977" name="toc48548977" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521392924280206" name="refheadingtoc2521392924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="826-la-funcion-get_decote">8.2.6. <span style="color: #4f81bd"><strong>La función</strong> [get_décôte]</span></h3>
+<p>La función <strong>[get_décôte]</strong> implementa el cálculo de la posible reducción del impuesto (apartado <a href="#calculdela"><u><span style="color: #0563c1">|Cálculo de la</span></u></a> reducción|):</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># calcula una posible reducción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> get_décôte(</span><span style="color:#808080">marié</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">salaire</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">impots</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># Inicialmente, un descuento nulo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    décôte = 0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># monto máximo del impuesto para tener derecho al descuento</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    plafond_impôt_pour_décôte = PLAFOND_IMPOT_COUPLE_POUR_DECOTE </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">marié</span><span style="color:#000000"> == </span><span style="color:#a31515">&quot;oui&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">else</span><span style="color:#000000"> PLAFOND_IMPOT_CELIBATAIRE_POUR_DECOTE</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">impots</span><span style="color:#000000"> &lt; plafond_impôt_pour_décôte:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># monto máximo de la reducción</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        plafond_décôte = PLAFOND_DECOTE_COUPLE </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">marié</span><span style="color:#000000"> == </span><span style="color:#a31515">&quot;oui&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">else</span><span style="color:#000000"> PLAFOND_DECOTE_CELIBATAIRE</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># descuento teórico</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        décôte = plafond_décôte - 0.75 * </span><span style="color:#808080">impots</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># la deducción no puede superar el monto del impuesto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> décôte &gt; </span><span style="color:#808080">impots</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            décôte = </span><span style="color:#808080">impots</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># no hay descuento &lt;0</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> décôte &lt; 0:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            décôte = 0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># resultado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#6f008a">math</span><span style="color:#000000">.ceil(décôte)</span></span></span>
+</code></pre></div>
+
+<p><span id="toc48548978" name="toc48548978" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521412924280206" name="refheadingtoc2521412924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="827-la-funcion-get_reduction">8.2.7. <span style="color: #4f81bd"><strong>La función</strong> [get_réduction]</span></h3>
+<p>La función <strong>[get_réduction]</strong> implementa el cálculo de la posible reducción del impuesto a pagar (párrafo <a href="#calculdela1"><u><span style="color: #0563c1">|Cálculo de la reducción de</span></u></a> impuestos|):</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># calcula una posible reducción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> get_réduction(</span><span style="color:#808080">marié</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">salaire</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">enfants</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">impots</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># el límite máximo de ingresos para tener derecho a la reducción del 20 %</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    plafond_revenu_pour_réduction = PLAFOND_REVENUS_COUPLE_POUR_REDUCTION </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">marié</span><span style="color:#000000"> == </span><span style="color:#a31515">&quot;oui&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">else</span><span style="color:#000000"> PLAFOND_REVENUS_CELIBATAIRE_POUR_REDUCTION</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    plafond_revenu_pour_réduction += </span><span style="color:#808080">enfants</span><span style="color:#000000"> * VALEUR_REDUC_DEMI_PART</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">enfants</span><span style="color:#000000"> &gt; 2:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        plafond_revenu_pour_réduction += (</span><span style="color:#808080">enfants</span><span style="color:#000000"> - 2) * VALEUR_REDUC_DEMI_PART</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># ingresos imponibles</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    revenu_imposable = get_revenu_imposable(</span><span style="color:#808080">salaire</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># descuento</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    réduction = 0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> revenu_imposable &lt; plafond_revenu_pour_réduction:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># reducción del 20 %</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        réduction = 0.2 * </span><span style="color:#808080">impots</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># resultado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#6f008a">math</span><span style="color:#000000">.ceil(réduction)</span></span></span>
+</code></pre></div>
+
+<p><span id="toc48548979" name="toc48548979" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521432924280206" name="refheadingtoc2521432924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="828-la-funcion-get_revenu_imposable">8.2.8. <span style="color: #4f81bd"><strong>La función</strong> [get_revenu_imposable]</span></h3>
+<p>La función <strong>[get_revenu_imposable]</strong> calcula el ingreso imponible a partir del salario anual:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># revenu_imposable = salaireAnnuel - deducción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># la deducción tiene un mínimo y un máximo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ----------------------------------------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> get_revenu_imposable(</span><span style="color:#808080">salaire</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># descuento del 10 % del salario</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    abattement = 0.1 * </span><span style="color:#808080">salaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># esta deducción no puede superar ABATTEMENT_DIXPOURCENT_MAX</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> abattement &gt; ABATTEMENT_DIXPOURCENT_MAX:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        abattement = ABATTEMENT_DIXPOURCENT_MAX</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># la deducción no puede ser inferior a ABATTEMENT_DIXPOURCENT_MIN</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> abattement &lt; ABATTEMENT_DIXPOURCENT_MIN:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        abattement = ABATTEMENT_DIXPOURCENT_MIN</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># ingresos imponibles</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    revenu_imposable = </span><span style="color:#808080">salaire</span><span style="color:#000000"> - abattement</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># resultado</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#6f008a">math</span><span style="color:#000000">.floor(revenu_imposable)</span></span></span>
+</code></pre></div>
+
+<p><span id="toc48548980" name="toc48548980" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521452924280206" name="refheadingtoc2521452924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="829-la-funcion-record_results">8.2.9. <span style="color: #4f81bd"><strong>La función</strong> [record_results]</span></h3>
+<p>La función <strong>[record_results]</strong> guarda los resultados del cálculo del impuesto en un archivo de texto:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># escritura de los resultados en un archivo de texto</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ----------------------------------------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> record_results(</span><span style="color:#808080">results_filename</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">results</span><span style="color:#000000">: </span><span style="color:#2b91af">list</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># results_filename: el nombre del archivo de texto donde se guardarán los resultados</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># results: la lista de resultados en forma de una lista de diccionarios</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># cada diccionario se escribe en una línea de texto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    résultats = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># apertura del archivo de resultados</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        résultats = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#808080">results_filename</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;w&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf8&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># procesamiento de los contribuyentes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">for</span><span style="color:#000000"> result </span><span style="color:#0000ff">in</span><span style="color:#000000"> </span><span style="color:#808080">results</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># se registra el resultado en el archivo de resultados</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            résultats.write(</span><span style="color:#a31515">f&quot;{result}\n&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># siguiente contribuyente</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># se cierra el archivo si se ha abierto</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> résultats:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            résultats.close()</span></span>
+</code></pre></div>
+
+<p><span id="toc48548981" name="toc48548981" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc2521472924280206" name="refheadingtoc2521472924280206" class="odt-bookmark-anchor"></span></p>
+<h3 id="8210-los-resultados">8.2.10. <span style="color: #4f81bd">Los resultados</span></h3>
+<p>Como ya se mencionó, con el siguiente archivo de contribuyentes <strong>[taxpayersdata.txt]</strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>oui,2,55555
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>oui,2,50000
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>oui,3,50000
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>non,2,100000
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>non,3,100000
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>oui,3,100000
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>oui,5,100000
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>non,0,100000
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>oui,2,30000
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>non,0,200000
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>oui,3,200000
+</code></pre></div></td></tr></table></div>
+<p>el script <strong>[main.py]</strong> crea el siguiente archivo <strong>[résultats.txt]</strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 55555, &#39;impôt&#39;: 2814, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 1384, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 384, &#39;réduction&#39;: 347, &#39;taux&#39;: 0.14}
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 720, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 19884, &#39;surcôte&#39;: 4480, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 16782, &#39;surcôte&#39;: 7176, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 9200, &#39;surcôte&#39;: 2180, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.3}
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 5, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 4230, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 0, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 22986, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 30000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0}
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 0, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 64210, &#39;surcôte&#39;: 7498, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.45}
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 42842, &#39;surcôte&#39;: 17283, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+</code></pre></div></td></tr></table></div>
+<p>Estos resultados coinciden con las cifras oficiales del apartado <a href="#chiffresofficiels"><u><span style="color: #0563c1">|Cifras</span></u></a> oficiales|.</p>
+<p>Ahora, ejecutemos esta versión en una ventana de consola:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\v01&gt;python main.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Traceback (most recent call last):</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  File &quot;main.py&quot;, line 4, in &lt;module&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    from impots.v01.shared.impôts_module_01 import *</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ModuleNotFoundError: <span style="background-color:#fff2cc">No module named &#x27;impots&#x27;</span></span></span>
+</code></pre></div>
+
+<p>Vuelve a aparecer un error que ya hemos visto antes: el de que no se encuentra un módulo, en este caso el módulo <strong>[impots]</strong>. Recordemos que esto significa que: </p>
+<ul>
+<li>el intérprete de Python ha recorrido una por una las carpetas de la ruta de Python;</li>
+<li>en ninguna de ellas encontró una carpeta que contuviera un script <strong>[impots.py]</strong>;</li>
+</ul>
+<p>La versión <strong>[v02]</strong> resolverá este problema.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Este curso-tutorial, escrito por <strong>Serge Tahé</strong>, se pone a disposición del público de acuerdo con los términos de la
+        <em>Creative Commons Reconocimiento – Sin uso comercial –
+        Compartir igual 3.0 sin modificaciones</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
